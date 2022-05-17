@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: dcbb9f65b5fc2774ba1d6fdfd77aabad
+  m_SerializeEntries:
+  - m_GUID: eabd5f1f7dc47924b98c84a44014ccb5
+    m_Address: Assets/_Game/UI/Store/Textures/HQCurrencyIcon@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e095de18b1944f54cba95dd4fd9c0842
+    m_Address: Assets/_Game/UI/Store/Textures/FlatCurrencyIcon@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9cf3f8fa3dd148efa9bb0264ff9be70
+    m_Address: Assets/_Game/UI/_Common/ponytail_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c7840642bbdf4544b55c70969eb8502
+    m_Address: Assets/_Game/UI/_Common/pigtails_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 950fc4848e87b486297857b2ef796196
+    m_Address: Assets/_Game/UI/_Common/mullet_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce9d121bb809c4e60b8220ef60bdda56
+    m_Address: Assets/_Game/UI/_Common/flames_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47ae9a022a86046f4bc181e95c6942d0
+    m_Address: Assets/_Game/UI/_Common/uphair_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 668d84d90a5a04b788e080630314512f
+    m_Address: Assets/_Game/UI/_Common/afro_icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef0d90ba75d17484c91dbfa529fdf852
+    m_Address: Assets/_Game/UI/_Common/FlatGemIcon@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e1aee32888c2d28489a46d28cd9642f5
+    m_Address: Assets/_Game/UI/HUD/Textures/BigSpender_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b2a642cb5be414640963b0f2afa549c3
+    m_Address: Assets/_Game/UI/HUD/Textures/Collector_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3a2235e43b20fb4eadc72d91172467d
+    m_Address: Assets/_Game/UI/HUD/Textures/Killamanjaro_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a331a3ba04101349acbebed900ee5ac
+    m_Address: Assets/_Game/UI/HUD/Textures/Killjoy_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 39e0938e8dc77594e8d1eaee25e7c303
+    m_Address: Assets/_Game/UI/HUD/Textures/Killtastrophe_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 886f518dcbd0ac345a85765abfd2302b
+    m_Address: Assets/_Game/UI/HUD/Textures/NewBeginnings_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8041996111c76f24ca7815e3b3c9127b
+    m_Address: Assets/_Game/UI/HUD/Textures/Ninja_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 545b821154e70df49acc9e66f719c24b
+    m_Address: Assets/_Game/UI/HUD/Textures/NotABot_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d158b8cc0a84b9746b2a75c931b634a0
+    m_Address: Assets/_Game/UI/HUD/Textures/Ttaeng!_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f1d7a24985b0135448617297fc327b9a
+    m_Address: Assets/_Game/UI/HUD/Textures/Veteran_AchievementBadge@4x.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c22fdbdf06884648b5a7cb65e964456
+    m_Address: Assets/_Game/UI/_Common/Hat_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74cc47864c059934d8fed8cc2c449133
+    m_Address: Assets/_Game/UI/_Common/Hat_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14118f1f4e485d546a50ce5f109f76fa
+    m_Address: Assets/_Game/UI/_Common/Hat_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2dc3404d58d2d834e8bab83e0e8f51b9
+    m_Address: Assets/_Game/UI/_Common/Hat_04.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c7d90250d01a45745ae0f6d12308b447
+    m_Address: Assets/_Game/UI/_Common/Hat_05.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31cb925af80a36b46a6c3841aa2ce735
+    m_Address: Assets/_Game/UI/_Common/Hat_06.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8e90148a0f906794fa2eecae7a4efe15
+    m_Address: Assets/_Game/UI/_Common/Hat_07.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 752bdc13a0f93364181765aee4f2a237
+    m_Address: Assets/_Game/UI/_Common/Hat_08.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8a512b3262b66804d95faaa731995f96
+    m_Address: Assets/_Game/UI/_Common/Hat_09.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a8651db7f37ce394a8fc87032db23b65, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 65ac66e652fea434191f3a8c9a00f5d0, type: 2}
+    - {fileID: 11400000, guid: ea50bfe9f53d6ff4da16bd2ccf5fc529, type: 2}

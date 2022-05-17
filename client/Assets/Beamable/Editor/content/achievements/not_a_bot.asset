@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ba0e22681fb9b43aaae96a171013be, type: 3}
+  m_Name: not_a_bot
+  m_EditorClassIdentifier: 
+  _tags: []
+  Name: Not a Bot
+  Description: Create an account.
+  Icon:
+    m_AssetGUID: 545b821154e70df49acc9e66f719c24b
+    m_SubObjectName: NotABot_AchievementBadge@4x
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_EditorAssetChanged: 0
+  StringRequirements:
+  - Key: CREATE_AN_ACCOUNT
+    Value: false
+  TotalCountRequirement:
+    Key: 
+    TotalCount: 0
+  IsSecret: 0

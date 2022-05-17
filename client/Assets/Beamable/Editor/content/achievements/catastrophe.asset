@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ba0e22681fb9b43aaae96a171013be, type: 3}
+  m_Name: catastrophe
+  m_EditorClassIdentifier: 
+  _tags: []
+  Name: Killtastrophe
+  Description: Kill 100 players.
+  Icon:
+    m_AssetGUID: 39e0938e8dc77594e8d1eaee25e7c303
+    m_SubObjectName: Killtastrophe_AchievementBadge@4x
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  StringRequirements: []
+  TotalCountRequirement:
+    Key: total_kills
+    TotalCount: 100
+  IsSecret: 0

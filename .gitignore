@@ -1,0 +1,8 @@
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+/[Bb]eamablePhotonSample_clone_0/
+/[Bb]eamablePhotonSample_clone_1/
+/[Bb]eamablePhotonSample_clone_2/
+BeamablePhotonSample/Assets/Beamable/Resources/config-defaults.txt

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d95213ca40fe24dbf5aead660bef1f, type: 3}
+  m_Name: WPN_bat
+  m_EditorClassIdentifier: 
+  weaponType: 1
+  _damageMods: 2
+  AnimationLayer: 2
+  _rateOfFire: 0.3
+  _damage: 2
+  _baseHealth: 4
+  spawnerMesh: {fileID: -6389175065836046587, guid: 2970951b4d86b2645bf1e0017c1c2132, type: 3}
+  impactSnd: {fileID: 11400000, guid: 1b4977354c8309d479b14790ea9619be, type: 2}
+  pickupSnd: {fileID: 11400000, guid: 7f61d08d5db3eb249bd06766f2ca6569, type: 2}
+  pickupSprite: {fileID: 21300000, guid: 923b270146aeced46849b50e7dfda8e4, type: 3}

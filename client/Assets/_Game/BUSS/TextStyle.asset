@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6878a57282fc4d5dae9c2e3538013b26, type: 3}
+  m_Name: TextStyle
+  m_EditorClassIdentifier: 
+  _styles:
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":514}'
+    _selector: '#CenteredText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    _selector: '#MainText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":513}'
+    _selector: '#LeftCenterText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":0.3921568691730499}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":513}'
+    _selector: '#FadedLeftCenterText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":516}'
+    _selector: '#RightCenterText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":258}'
+    _selector: '#CenterTopText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":0}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":260}'
+    _selector: '#RightTopText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":1}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":513}'
+    _selector: '#LightLeftCenterText'
+  - _properties:
+    - key: font
+      property:
+        type: Beamable.UI.Buss.FontBussAssetProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"AssetSerializationKey":1}'
+    - key: fontColor
+      property:
+        type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        json: '{"_color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0}}'
+    - key: textAlignment
+      property:
+        type: Beamable.UI.Buss.TextAlignmentOptionsBussProperty, Unity.Beamable,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        json: '{"Enum":514}'
+    _selector: '#LightCenteredText'
+  _assetReferences:
+  - {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  - {fileID: 11400000, guid: 36395197788df4741959f8018fb363e9, type: 2}
+  _isReadOnly: 0

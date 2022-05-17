@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1f234130ee7504f9cf7ec862daadb1, type: 3}
+  m_Name: Gem_Bundle_499
+  m_EditorClassIdentifier: 
+  _tags: []
+  price:
+    type: sku
+    symbol: skus.Gem_Bundle_499
+    amount: 499
+  offer:
+    titles:
+      HasValue: 1
+      Value:
+        listData:
+        - 750 Gems
+    descriptions:
+      HasValue: 1
+      Value:
+        listData:
+        - Get 750 Gems to spend
+    obtainCurrency:
+    - symbol:
+        Id: currency.gems
+      amount: 750
+      symbol_legacy: 
+    obtainItems: []
+  activePeriod:
+    HasValue: 0
+    Value:
+      start: 
+      end:
+        HasValue: 0
+        Value: 
+  purchaseLimit:
+    HasValue: 0
+    Value: 0
+  cohortRequirements:
+    HasValue: 0
+    Value: []
+  playerStatRequirements:
+    HasValue: 0
+    Value: []
+  offerRequirements:
+    HasValue: 0
+    Value: []
+  clientData:
+    HasValue: 0
+    Value:
+      keys: []
+      values: []
+  activeDurationSeconds:
+    HasValue: 0
+    Value: 0
+  activeDurationCoolDownSeconds:
+    HasValue: 0
+    Value: 0
+  activeDurationPurchaseLimit:
+    HasValue: 0
+    Value: 0
+  buttonText:
+    HasValue: 0
+    Value: 
+  schedule:
+    HasValue: 0
+    Value:
+      description: 
+      activeFrom: 2022-04-18T21:40:28Z
+      activeTo:
+        HasValue: 0
+        Value: 
+      definitions: []
+  scheduleInstancePurchaseLimit:
+    HasValue: 0
+    Value: 0
+  icon:
+    m_AssetGUID: dcae12a3ab2b67143ba898852b5b43cd
+    m_SubObjectName: MediumBundle
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
