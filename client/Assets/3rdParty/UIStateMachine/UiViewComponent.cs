@@ -57,9 +57,10 @@ namespace Beamable.UI
         private async void TrackEvent(string eventName)
         {
 #if BEAMABLE_UI_ANALYTICS
-            var beamableAPI = await Beamable.API.Instance;
-            var eventData = new ViewTrackingEvent(eventName, viewName, nameSpace, beamableAPI.User.id.ToString());
-            beamableAPI.AnalyticsTracker.TrackEvent(eventData, true);
+            var context = BeamContext.Default;
+            await _context.OnReady;
+            var eventData = new ViewTrackingEvent(eventName, viewName, nameSpace, context.PlayerId.ToString());
+            context.Api.AnalyticsTracker.TrackEvent(eventData, true);
 #endif
         }
     }

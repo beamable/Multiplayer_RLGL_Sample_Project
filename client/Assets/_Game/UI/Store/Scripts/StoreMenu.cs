@@ -33,19 +33,20 @@ public class StoreMenu : MonoBehaviour
 
     private PlayerOfferView _selectedItem;
     private ListingContent _selectedListing;
-    
-    private IBeamableAPI _beamableAPI;
+
+    private BeamContext _context;
     private InventoryView _currentInventory;
 
     private async void OnEnable()
     {
         await SetUpBeamable();
-        _currentInventory = await _beamableAPI.InventoryService.GetCurrent();
+        _currentInventory = await _context.Api.InventoryService.GetCurrent();
     }
 
     private async Task SetUpBeamable()
     {
-        _beamableAPI = await API.Instance;
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     private PlayerOfferView SelectedItem

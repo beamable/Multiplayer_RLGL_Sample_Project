@@ -10,7 +10,7 @@ using UnityEngine.Events;
 
 public class PlayerStatInfo : MonoBehaviour
 {
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
     private long _userId;
     private Dictionary<string, string> _stats;
 
@@ -21,7 +21,7 @@ public class PlayerStatInfo : MonoBehaviour
     public UnityEvent<string> OnGetUsername;
     public UnityEvent<Sprite> OnGetIcon;
     public UnityEvent<string> OnGetIconName;
-    
+
     private void OnEnable()
     {
         SetUpBeamable();
@@ -29,9 +29,10 @@ public class PlayerStatInfo : MonoBehaviour
 
     private async void SetUpBeamable()
     {
-        _beamableAPI = await API.Instance;
-        _userId = _beamableAPI.User.id;
-        _stats = await _beamableAPI.StatsService.GetStats("client", "public", "player", _userId);
+        _context = BeamContext.Default;
+        await _context.OnReady;
+        _userId = _context.PlayerId;
+        _stats = await _context.Api.StatsService.GetStats("client", "public", "player", _userId);
         GetAllStats();
     }
 
@@ -41,21 +42,23 @@ public class PlayerStatInfo : MonoBehaviour
         GetIcon();
     }
     
-    private string GetPlayerStat(string statKey)
+    private async Task<string> GetPlayerStat(string statKey)
     {
+        var blankStats = new Dictionary<string, string>();
+        await _context.Api.StatsService.SetStats("public", blankStats);
         _stats.TryGetValue(statKey, out var value);
         return value;
     }
     
 
-    public void GetUsername()
+    public async void GetUsername()
     {
-        OnGetUsername?.Invoke(GetPlayerStat(aliasStat.StatKey) ?? aliasStat.DefaultValue);
+        OnGetUsername?.Invoke(await GetPlayerStat(aliasStat.StatKey) ?? aliasStat.DefaultValue);
     }
 
-    public void GetIcon()
+    public async void GetIcon()
     {
-        var spriteId = GetPlayerStat(avatarStat.StatKey)  ?? avatarStat.DefaultValue;
+        var spriteId = await GetPlayerStat(avatarStat.StatKey)  ?? avatarStat.DefaultValue;
 
         OnGetIcon?.Invoke(!string.IsNullOrWhiteSpace(spriteId)
             ? GetAvatar(spriteId)
@@ -69,16 +72,16 @@ public class PlayerStatInfo : MonoBehaviour
         return accountAvatar.Sprite;
     }
 
-    public void GetIconName()
+    public async void GetIconName()
     {
-        OnGetIconName?.Invoke(GetPlayerStat(avatarStat.StatKey) ?? avatarStat.DefaultValue);
+        OnGetIconName?.Invoke(await GetPlayerStat(avatarStat.StatKey) ?? avatarStat.DefaultValue);
     }
 
     private async Task SetPlayerStat(string statKey, string value,string domainOverride = "client")
     {
         Dictionary<string, string> setStats = new Dictionary<string, string>(){{statKey, value}};
-        await _beamableAPI.StatsService.SetStats("public", setStats);
-        _stats = await _beamableAPI.StatsService.GetStats(domainOverride, "public", "player", _userId);
+        await _context.Api.StatsService.SetStats("public", setStats);
+        _stats = await _context.Api.StatsService.GetStats(domainOverride, "public", "player", _userId);
     }
 
     public async void SetUsername(string alias)

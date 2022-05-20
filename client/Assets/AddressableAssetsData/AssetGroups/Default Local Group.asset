@@ -17,40 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: dcbb9f65b5fc2774ba1d6fdfd77aabad
   m_SerializeEntries:
-  - m_GUID: eabd5f1f7dc47924b98c84a44014ccb5
-    m_Address: Assets/_Game/UI/Store/Textures/HQCurrencyIcon@4x.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: e095de18b1944f54cba95dd4fd9c0842
     m_Address: Assets/_Game/UI/Store/Textures/FlatCurrencyIcon@4x.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e9cf3f8fa3dd148efa9bb0264ff9be70
-    m_Address: Assets/_Game/UI/_Common/ponytail_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 5c7840642bbdf4544b55c70969eb8502
-    m_Address: Assets/_Game/UI/_Common/pigtails_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 950fc4848e87b486297857b2ef796196
-    m_Address: Assets/_Game/UI/_Common/mullet_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ce9d121bb809c4e60b8220ef60bdda56
-    m_Address: Assets/_Game/UI/_Common/flames_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 47ae9a022a86046f4bc181e95c6942d0
-    m_Address: Assets/_Game/UI/_Common/uphair_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 668d84d90a5a04b788e080630314512f
-    m_Address: Assets/_Game/UI/_Common/afro_icon.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ef0d90ba75d17484c91dbfa529fdf852
-    m_Address: Assets/_Game/UI/_Common/FlatGemIcon@4x.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e1aee32888c2d28489a46d28cd9642f5

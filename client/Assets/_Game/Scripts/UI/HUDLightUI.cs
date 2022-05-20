@@ -6,24 +6,18 @@ using UnityEngine.UI;
 
 public class HUDLightUI : MonoBehaviour
 {
-    [SerializeField] private Sprite greenRadialBG;
-    [SerializeField] private Sprite greenRadialFill;
-    [Space]
-    [SerializeField] private Sprite redRadialBG;
-    [SerializeField] private Sprite redRadialFill;
+    [SerializeField] private Color redColor;
+    [SerializeField] private Color redBackgroundColor;
+    [SerializeField] private Color greenColor;
+    [SerializeField] private Color greenBackgroundColor;
     [Space]
     [SerializeField] private Image[] warningLightsUIBG;
     [SerializeField] private Image[] warningLightsUIFill;
     [Space]
-    [SerializeField] private Sprite greenLightUIBG;
-    [SerializeField] private Sprite redLightUIBG;
     [SerializeField] private Image lightStatusUIBG;
-    [Space]
     [SerializeField] private TextMeshProUGUI lightStatusText;
     [Space]
     [SerializeField] private Image[] hudDividers;
-    [SerializeField] private Sprite greenDivider;
-    [SerializeField] private Sprite redDivider;
 
     private RedLightManager _redLightManager { get; set; }
 
@@ -44,33 +38,33 @@ public class HUDLightUI : MonoBehaviour
     private void GreenLight(object sender, EventArgs e)
     {
         lightStatusText.text = "GREEN LIGHT";
-        lightStatusUIBG.sprite = greenLightUIBG;
+        lightStatusUIBG.color = greenBackgroundColor;
         for (var index = 0; index < warningLightsUIFill.Length; index++)
         {
-            warningLightsUIBG[index].sprite = greenRadialBG;
+            warningLightsUIBG[index].color = greenColor;
             warningLightsUIFill[index].enabled = true;
-            warningLightsUIFill[index].sprite = greenRadialFill;
+            warningLightsUIFill[index].color = greenColor;
         }
 
         foreach (Image divider in hudDividers)
         {
-            divider.sprite = greenDivider;
+            divider.color = greenColor;
         }
     }
 
     private void RedLight(object sender, EventArgs e)
     {
         lightStatusText.text = "RED LIGHT";
-        lightStatusUIBG.sprite = redLightUIBG;
+        lightStatusUIBG.color = redBackgroundColor;
         for (var index = 0; index < warningLightsUIFill.Length; index++)
         {
-            warningLightsUIBG[index].sprite = redRadialBG;
+            warningLightsUIBG[index].color = redColor;
             warningLightsUIFill[index].enabled = true;
-            warningLightsUIFill[index].sprite = redRadialFill;
+            warningLightsUIFill[index].color = redColor;
         }
         foreach (Image divider in hudDividers)
         {
-            divider.sprite = redDivider;
+            divider.color = redColor;
         }
     }
 

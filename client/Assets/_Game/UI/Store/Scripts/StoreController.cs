@@ -19,15 +19,14 @@ public class StoreController : MonoBehaviour
     public List<CurrencyUpdatedModel> onCurrencyUpdatedModels;
     public UnityEvent onPurchaseFailed;
     public UnityEvent onPurchase;
-    
+
     [SerializeField] private List<StoreRef> stores;
     [SerializeField] private StoreRef storeRef;
     [SerializeField] private CurrencyRef currencyRef;
-    [SerializeField] private BeamableStatsController statsController;
 
     private StoreContent _storeContent;
     private CurrencyContent _currencyContent;
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
 
     private const string TOTAL_SPENT_KEY = "TOTAL_SPENT";
 
@@ -48,7 +47,8 @@ public class StoreController : MonoBehaviour
     /// </summary>
     private async Task SetUpBeamable()
     {
-        _beamableAPI = await API.Instance;
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     /// <summary>
@@ -69,7 +69,7 @@ public class StoreController : MonoBehaviour
     /// <param name="item"></param>
     private async Task<bool> CanAffordItem(PlayerOfferView item)
     {
-        var currency = await _beamableAPI.InventoryService.GetCurrency(currencyRef.Id);
+        var currency = await _context.Api.InventoryService.GetCurrency(currencyRef.Id);
         return (int)currency >= item.price.amount;
     }
 
@@ -101,14 +101,14 @@ public class StoreController : MonoBehaviour
         }
         else
         {
-            await _beamableAPI.CommerceService.Purchase(_storeContent.Id, item.symbol).Error((error) =>
+            await _context.Api.CommerceService.Purchase(_storeContent.Id, item.symbol).Error((error) =>
             {
                 Debug.LogError(error);
                 onPurchaseFailed?.Invoke();
             });
             if (listing.price.symbol == "currency.photons")
             {
-                await statsController.AddToStat(TOTAL_SPENT_KEY, item.price.amount);
+                await BeamableStatsController.AddToStat(TOTAL_SPENT_KEY, item.price.amount);
             }
             onPurchase?.Invoke();
         }
@@ -152,7 +152,7 @@ public class StoreController : MonoBehaviour
     /// </summary>
     private void SubscribeToChanges()
     {
-        _beamableAPI.CommerceService.Subscribe(_storeContent.Id, CommerceService_OnChanged);
-        _beamableAPI.InventoryService.Subscribe(_currencyContent.Id, Currency_OnChanged);
+        _context.Api.CommerceService.Subscribe(_storeContent.Id, CommerceService_OnChanged);
+        _context.Api.InventoryService.Subscribe(_currencyContent.Id, Currency_OnChanged);
     }
 }

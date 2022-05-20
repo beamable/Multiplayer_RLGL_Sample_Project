@@ -54,8 +54,8 @@ public class SettingsCloudSave : MonoBehaviour
     [SerializeField] private UnityEvent<PlayerGraphicsSettings> OnGraphicsLoaded;
     [SerializeField] private UnityEvent<PlayerAudioSettings> OnAudioLoaded;
     [SerializeField] private UnityEvent<PlayerAccessibilitySettings> OnAccessibilityLoaded;
-
-    private IBeamableAPI _beamableAPI;
+    
+    private BeamContext _context;
     private CloudSavingService _cloudSavingService;
     
     public string GraphicsFileName { get; private set; } = "graphicsFile.json";
@@ -69,8 +69,9 @@ public class SettingsCloudSave : MonoBehaviour
 
     private async void SetUpBeamable()
     {
-        _beamableAPI = await Beamable.API.Instance;
-        _cloudSavingService = _beamableAPI.CloudSavingService;
+        _context = BeamContext.Default;
+        await _context.OnReady;
+        _cloudSavingService = _context.Api.CloudSavingService;
         
         _cloudSavingService.UpdateReceived += 
             CloudSavingService_OnUpdateReceived;

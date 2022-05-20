@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using _Game.Features.Authentication;
 using Beamable;
 using Beamable.Common.Api.Auth;
@@ -10,7 +7,6 @@ using UnityEngine;
 
 public class EmailLoginHandler : AuthenticationHandler
 {
-    private IBeamableAPI _beamableAPI;
     private User _user;
 
     [HideInInspector] public string email;
@@ -19,8 +15,8 @@ public class EmailLoginHandler : AuthenticationHandler
     protected override async void Awake()
     {
         base.Awake();
-        _beamableAPI = await API.Instance;
-        
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     [UsedImplicitly]
@@ -38,13 +34,13 @@ public class EmailLoginHandler : AuthenticationHandler
     [UsedImplicitly]
     public async void CreateUser()
     {
-        var token = await _beamableAPI.AuthService.CreateUser();
-        _beamableAPI.ApplyToken(token);
-        _beamableAPI.AuthService.RegisterDBCredentials(email, password)
+        var token = await _context.Api.AuthService.CreateUser();
+        _context.Api.ApplyToken(token);
+        _context.Api.AuthService.RegisterDBCredentials(email, password)
             .Then(user =>
             {
                 _user = user;
-                OnLoginSuccess?.Invoke();
+                Login();
             })
             .Error(error =>
             {
@@ -58,9 +54,9 @@ public class EmailLoginHandler : AuthenticationHandler
     {
         try
         {
-            var token = await _beamableAPI.AuthService.Login(email, password, false);
-            _user = _beamableAPI.User;
-            _beamableAPI.ApplyToken(token);
+            var token = await _context.Api.AuthService.Login(email, password, false);
+            _user = _context.Api.User;
+            _context.Api.ApplyToken(token);
             OnLoginSuccess?.Invoke();
         }
         catch (Exception e)

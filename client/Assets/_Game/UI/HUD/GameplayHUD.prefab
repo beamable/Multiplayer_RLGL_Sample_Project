@@ -1923,10 +1923,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c58792686d8334ca24ad6dcfe8a37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenRadialBG: {fileID: 21300000, guid: 5ad9f884b55711c4f9d67fa3346bd0a7, type: 3}
-  greenRadialFill: {fileID: 21300000, guid: 5eeb9dfe5651f2a4b8ebcd0b3bd16403, type: 3}
-  redRadialBG: {fileID: 21300000, guid: da0b999264d65084a9d0a03baa765daa, type: 3}
-  redRadialFill: {fileID: 21300000, guid: 01c9192579c650a46aafe4da9d0ddc9a, type: 3}
+  redColor: {r: 0.85098046, g: 0.0627451, b: 0.2901961, a: 1}
+  redBackgroundColor: {r: 0.34901962, g: 0.003921569, b: 0.15294118, a: 0.5019608}
+  greenColor: {r: 0, g: 0.909804, b: 0.36862746, a: 1}
+  greenBackgroundColor: {r: 0.007843138, g: 0.46666667, b: 0.5686275, a: 0.5019608}
   warningLightsUIBG:
   - {fileID: 2372029014467737376}
   - {fileID: 2372029013934314931}
@@ -1935,15 +1935,11 @@ MonoBehaviour:
   - {fileID: 6580957494687778161}
   - {fileID: 6580957493426164162}
   - {fileID: 6580957495088634424}
-  greenLightUIBG: {fileID: 21300000, guid: 894790813e58a424e9fd81f96d556b7c, type: 3}
-  redLightUIBG: {fileID: 21300000, guid: 26642729e9f2f0f45af33a5e72a5a5a1, type: 3}
   lightStatusUIBG: {fileID: 2372029015162559952}
   lightStatusText: {fileID: 6580957493233547825}
   hudDividers:
   - {fileID: 2372029015216552358}
   - {fileID: 2372029013767342922}
-  greenDivider: {fileID: 21300000, guid: 1058fd6471aa2cd47a7ea68ccd8fe776, type: 3}
-  redDivider: {fileID: 21300000, guid: 95060beb6386df8488cdcb0419866435, type: 3}
 --- !u!114 &3329503881182768364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3787,14 +3783,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.007843138, g: 0.46666667, b: 0.5686275, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bbd5fdc0bdd11b4891f9239208c5f9c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

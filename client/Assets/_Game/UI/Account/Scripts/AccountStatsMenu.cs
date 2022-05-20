@@ -16,8 +16,8 @@ public class AccountStatsMenu : MonoBehaviour
     }
     [SerializeField] private List<NamedStat> namedStats;
     [SerializeField] private ListViewComponent statsListView;
-    
-    private IBeamableAPI _beamableAPI;
+
+    private BeamContext _context;
     private long _userId;
     private Dictionary<string, string> _stats;
 
@@ -29,15 +29,16 @@ public class AccountStatsMenu : MonoBehaviour
 
     private async Task SetUpBeamable()
     {
-        _beamableAPI = await API.Instance;
-        _userId = _beamableAPI.User.id;
+        _context = BeamContext.Default;
+        await _context.OnReady;
+        _userId = _context.PlayerId;
         await GetAllStats();
     }
 
     private async Task GetAllStats()
     {
-        await _beamableAPI.StatsService.SetStats("public", new Dictionary<string, string>());
-        _stats = await _beamableAPI.StatsService.GetStats("client", "public", "player", _userId);
+        await _context.Api.StatsService.SetStats("public", new Dictionary<string, string>());
+        _stats = await _context.Api.StatsService.GetStats("client", "public", "player", _userId);
     }
     
     public async void UpdateStatsList()

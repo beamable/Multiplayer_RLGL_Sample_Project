@@ -91,10 +91,6 @@ namespace BeamableExample.RedlightGreenLight.Character
         [SerializeField]
         [Tooltip("Manages all the weapons for this player.")]
         private WeaponManager _weaponManager;
-        
-        [SerializeField] 
-        [Tooltip("Changes the player's beamable stats.")]
-        private BeamableStatsController _statsController;
 
         [Networked]
         [HideInInspector]
@@ -127,13 +123,17 @@ namespace BeamableExample.RedlightGreenLight.Character
         private bool DoFireAnimation = false;
         private string _gameOverMessage;
         private DamageInformation _damageInfo;
-        
+        private BeamContext _context;
+        private long _beamableId;
+
+        private const string TOTAL_KILLS_KEY = "total_kills";
         private const string KILLS_IN_GAME_KEY = "SEVEN_KILLS_IN_GAME";
+        private const int KILLS_IN_GAME_NUMBER = 7;
         private const string MATCHES_PLAYED_KEY = "MATCHES_PLAYED";
         private const string INVISIBLE_FOR_ENTIRE_GAME_KEY = "INVISIBLE_FOR_ENTIRE_GAME";
         private const string FIRST_PLACE_KEY = "FIRST_PLACE";
         private const string MATCHES_WON_KEY  = "MATCHES_WON";
-        
+
         // AdvancedPlayer INTERFACE
         
         protected override void OnSpawned()
@@ -155,7 +155,8 @@ namespace BeamableExample.RedlightGreenLight.Character
                 CinemachineManager.Instance.thirdPersonCamera.Follow = CameraPivot;
 
                 SetActiveVirtualCamera(VirtualCameraType.FOLLOW);
-
+                
+                SetUpBeamable();
                 GetBeameableAlias();
                 
                 hasBeenSeen = false;
@@ -173,15 +174,20 @@ namespace BeamableExample.RedlightGreenLight.Character
 
         private async void GetBeameableAlias()
         {
-            var context = BeamContext.Default;
-            await context.OnReady;
-            var userId = context.Api.User.id;
-            var stats = await context.Api.StatsService.GetStats("client", "public", "player", userId);
+            var stats = await _context.Api.StatsService.GetStats("client", "public", "player", _beamableId);
             string alias = "Guest";
             if (stats.ContainsKey("alias"))
                 alias = stats["alias"];
 
             RPC_SetPlayerName(alias);
+        }
+
+        private async void SetUpBeamable()
+        {
+            _context = BeamContext.Default;
+            await _context.OnReady;
+            _beamableId = _context.Api.User.id;
+            BeamableStatsController.SetUpBeamable();
         }
 
         [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority, InvokeLocal = true, Channel = RpcChannel.Reliable)]
@@ -904,7 +910,7 @@ namespace BeamableExample.RedlightGreenLight.Character
             {
                 if (!hasBeenSeen)
                 {
-                    await _statsController.ChangeStat(INVISIBLE_FOR_ENTIRE_GAME_KEY, "True");
+                    await BeamableStatsController.ChangeStat(INVISIBLE_FOR_ENTIRE_GAME_KEY, "True");
                 }
                 // Show the EliminatedUI after a few seconds.
                 DisplayMatchCompletionUI(reason);
@@ -956,11 +962,11 @@ namespace BeamableExample.RedlightGreenLight.Character
                         GamesPlayed = 0
                     };
                 }
-                if (totalKills > 6)
+                if (totalKills >= KILLS_IN_GAME_NUMBER)
                 {
-                    await _statsController.ChangeStat(KILLS_IN_GAME_KEY, "True");
+                    await BeamableStatsController.ChangeStat(KILLS_IN_GAME_KEY, "True");
                 }
-                await _statsController.AddToStat(MATCHES_PLAYED_KEY, 1);
+                await BeamableStatsController.AddToStat(MATCHES_PLAYED_KEY, 1);
             }
             
             var matchTime = GameManager.Instance.levelManager.redLightManager.GetMatchTimeLeft() -
@@ -1181,7 +1187,7 @@ namespace BeamableExample.RedlightGreenLight.Character
         /// <param name="damageMods"></param>
         /// <param name="weaponType"></param>
         /// <param name="source"></param>
-        public void ApplyDamage(Vector3 impulse, int damage, DamageModifiers damageMods, WeaponType weaponType, PlayerRef source)
+        public async void ApplyDamage(Vector3 impulse, int damage, DamageModifiers damageMods, WeaponType weaponType, PlayerRef source)
         {
             if (!IsActivated)
                 return;
@@ -1205,6 +1211,7 @@ namespace BeamableExample.RedlightGreenLight.Character
                 // Update the attacking players stats.
                 attackingPlayer.gameScore += GameManager.Instance.levelManager.redLightManager.CaluculatePointsForKill();
                 attackingPlayer.totalKills++;
+                await BeamableStatsController.AddToStat(TOTAL_KILLS_KEY, 1);
 
                 var feedMessage = $"<color=#{highlightColor}>{attackingPlayer._playerName}</color> Killed <color=#{highlightColor}>{_playerName}</color> with a <color=#{highlightColor}>{weaponType}</color>";
                 RPC_ShowFeedMessage(feedMessage);
@@ -1509,18 +1516,14 @@ namespace BeamableExample.RedlightGreenLight.Character
         
         public async void MarkFirstPlace()
         {
-            if (Object.HasInputAuthority)
-            {
-                await _statsController.ChangeStat(FIRST_PLACE_KEY, "True");
-            }
+            if (!Object.HasInputAuthority) return;
+            await BeamableStatsController.ChangeStat(FIRST_PLACE_KEY, "True");
         }
 
         public async void AddToMatchesWon()
         {
-            if (Object.HasInputAuthority)
-            {
-                await _statsController.AddToStat(MATCHES_WON_KEY, 1);
-            }
+            if (!Object.HasInputAuthority) return;
+            await BeamableStatsController.AddToStat(MATCHES_WON_KEY, 1);
         }
 
         public void SetNetworkAnimatorActive(bool active)
@@ -1531,9 +1534,9 @@ namespace BeamableExample.RedlightGreenLight.Character
         private async void TrackEvent(float time, int score)
         {
 #if BEAMABLE_GAME_ANALYTICS
-            var beamableAPI = await Beamable.API.Instance;
-            var eventData = new GameResultsEvent(time, score, beamableAPI.User.id.ToString());
-            beamableAPI.AnalyticsTracker.TrackEvent(eventData, true);
+            var context = BeamContext.Default;
+            var eventData = new GameResultsEvent(time, score, context.PlayerId.ToString());
+            context.Api.AnalyticsTracker.TrackEvent(eventData, true);
 #endif
         }
 

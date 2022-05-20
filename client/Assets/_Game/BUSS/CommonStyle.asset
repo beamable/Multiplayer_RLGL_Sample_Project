@@ -131,13 +131,6 @@ MonoBehaviour:
         json: '{"_color":{"r":0.658823549747467,"g":0.658823549747467,"b":0.658823549747467,"a":1.0}}'
     _selector: '#SettingsHandle'
   - _properties:
-    - key: backgroundImage
-      property:
-        type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":1}'
-    _selector: '#FooterBackground'
-  - _properties:
     - key: backgroundColor
       property:
         type: Beamable.UI.Buss.VertexColorBussProperty, Unity.Beamable, Version=0.0.0.0,
@@ -175,7 +168,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":2}'
+        json: '{"AssetSerializationKey":1}'
     - key: backgroundColor
       property:
         type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
@@ -187,7 +180,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":3}'
+        json: '{"AssetSerializationKey":-1}'
     _selector: '#LoginSectionBackground'
   - _properties:
     - key: borderColor
@@ -253,7 +246,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":3}'
+        json: '{"AssetSerializationKey":-1}'
     _selector: '#StatBackground'
   - _properties:
     - key: backgroundColor
@@ -369,7 +362,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":4}'
+        json: '{"AssetSerializationKey":2}'
     _selector: '#HudWeaponBG'
   - _properties:
     - key: backgroundColor
@@ -415,7 +408,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":5}'
+        json: '{"AssetSerializationKey":3}'
     _selector: '#MobileJoyStickHandle'
   - _properties:
     - key: backgroundColor
@@ -486,7 +479,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":2}'
+        json: '{"AssetSerializationKey":1}'
     _selector: '#LeaveMatchButton'
   - _properties:
     - key: backgroundColor
@@ -498,7 +491,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":2}'
+        json: '{"AssetSerializationKey":1}'
     _selector: '#LeaveMatchButtonOutline'
   - _properties:
     - key: borderMode
@@ -554,7 +547,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":6}'
+        json: '{"AssetSerializationKey":4}'
     _selector: '#BluePillButton'
   - _properties:
     - key: backgroundColor
@@ -566,7 +559,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":2}'
+        json: '{"AssetSerializationKey":1}'
     _selector: '#PinkPillButton'
   - _properties:
     - key: backgroundColor
@@ -578,14 +571,14 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":5}'
+        json: '{"AssetSerializationKey":3}'
     _selector: '#BlueCircleButton'
   - _properties:
     - key: backgroundImage
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":7}'
+        json: '{"AssetSerializationKey":5}'
     - key: backgroundColor
       property:
         type: Beamable.UI.Buss.VertexColorBussProperty, Unity.Beamable, Version=0.0.0.0,
@@ -597,7 +590,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":7}'
+        json: '{"AssetSerializationKey":5}'
     - key: backgroundColor
       property:
         type: Beamable.UI.Buss.SingleColorBussProperty, Unity.Beamable, Version=0.0.0.0,
@@ -609,7 +602,7 @@ MonoBehaviour:
       property:
         type: Beamable.UI.Buss.SpriteBussProperty, Unity.Beamable, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-        json: '{"AssetSerializationKey":8}'
+        json: '{"AssetSerializationKey":6}'
     - key: backgroundColor
       property:
         type: Beamable.UI.Buss.VertexColorBussProperty, Unity.Beamable, Version=0.0.0.0,
@@ -652,9 +645,7 @@ MonoBehaviour:
     _selector: '#ScrollBarOutlined'
   _assetReferences:
   - {fileID: 21300000, guid: b80f7e66cb1bf6f4e926d05be4069953, type: 3}
-  - {fileID: 21300000, guid: 5bbd5fdc0bdd11b4891f9239208c5f9c, type: 3}
   - {fileID: 21300000, guid: 1c20d1db3d00ae44a951c97d9dc4d171, type: 3}
-  - {fileID: 21300000, guid: 5cc577a28ba3e7b469bb8019e315394f, type: 3}
   - {fileID: 21300000, guid: 3bdbdc820698f5e4ab5f1f819f7192fb, type: 3}
   - {fileID: 21300000, guid: 481e51f082e797441a47a3c5e2e01d20, type: 3}
   - {fileID: 21300000, guid: f38ab4a3e53c14a4b95b270618a5b148, type: 3}

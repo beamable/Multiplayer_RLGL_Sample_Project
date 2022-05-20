@@ -984,10 +984,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -256.4933}
-  m_SizeDelta: {x: 508.27, y: 50.505814}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822769529525751
 CanvasRenderer:
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     Email: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1459,10 +1459,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -110.62019}
-  m_SizeDelta: {x: 595, y: 121.240395}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822769610175587
 CanvasRenderer:
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_text: CONTINUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2459,7 +2459,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 7122515759899598717}
   m_TextViewport: {fileID: 4379822770439545845}
   m_TextComponent: {fileID: 4379822771386868268}
   m_Placeholder: {fileID: 4379822769512630232}
@@ -2660,8 +2660,7 @@ MonoBehaviour:
   successMarkers:
   - {fileID: 4379822770275653215}
   errorMarkers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4636239580036668746}
 --- !u!114 &1170685338198523473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,8 +2678,7 @@ MonoBehaviour:
   successMarkers:
   - {fileID: 4379822770275653215}
   errorMarkers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4636239580036668746}
 --- !u!1 &4379822769915701246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +2746,9 @@ MonoBehaviour:
   _styleSheet: {fileID: 11400000, guid: 8984a340252495a42b4c2e75c7922bf6, type: 2}
   _assetReferences: []
   _parent: {fileID: 0}
-  _children: []
+  _children:
+  - {fileID: 3079553662128617475}
+  - {fileID: 1057283823}
 --- !u!114 &1322868792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2878,7 +2878,7 @@ MonoBehaviour:
   m_text: CURRENT ACCOUNT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3038,10 +3038,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -339.24622}
-  m_SizeDelta: {x: 595, y: 75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822769983884721
 CanvasRenderer:
@@ -3150,7 +3150,9 @@ MonoBehaviour:
   _styleSheet: {fileID: 11400000, guid: 8984a340252495a42b4c2e75c7922bf6, type: 2}
   _assetReferences: []
   _parent: {fileID: 0}
-  _children: []
+  _children:
+  - {fileID: 1414380567}
+  - {fileID: 580834681}
 --- !u!1 &4379822770076057111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,7 +3232,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 7816160986705943838}
+  m_TargetGraphic: {fileID: 0}
   m_TextViewport: {fileID: 4379822771037310200}
   m_TextComponent: {fileID: 4379822770105381098}
   m_Placeholder: {fileID: 4379822770085078726}
@@ -3441,7 +3443,7 @@ MonoBehaviour:
   m_text: Enter your new password
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3596,7 +3598,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3761,7 +3763,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 7419866056873441761}
+  m_TargetGraphic: {fileID: 0}
   m_TextViewport: {fileID: 4379822770782994033}
   m_TextComponent: {fileID: 4379822770873970553}
   m_Placeholder: {fileID: 4379822771164744813}
@@ -4016,8 +4018,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960.15826, y: 0}
+  m_SizeDelta: {x: 160.79, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822770194174812
 CanvasRenderer:
@@ -4160,10 +4162,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4379822771016102590}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5855585555020482911}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4172,10 +4174,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4379822771123658677}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1785217337}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4550,10 +4552,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -434.24622}
-  m_SizeDelta: {x: 595, y: 75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822770360642260
 CanvasRenderer:
@@ -4662,7 +4664,9 @@ MonoBehaviour:
   _styleSheet: {fileID: 11400000, guid: 8984a340252495a42b4c2e75c7922bf6, type: 2}
   _assetReferences: []
   _parent: {fileID: 0}
-  _children: []
+  _children:
+  - {fileID: 623693931}
+  - {fileID: 1953589618}
 --- !u!1 &4379822770439545844
 GameObject:
   m_ObjectHideFlags: 0
@@ -5663,8 +5667,8 @@ MonoBehaviour:
   _assetReferences: []
   _parent: {fileID: 0}
   _children:
-  - {fileID: 806735978}
   - {fileID: 841056154}
+  - {fileID: 806735978}
 --- !u!1 &4379822770782994032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,8 +5856,8 @@ MonoBehaviour:
   _assetReferences: []
   _parent: {fileID: 0}
   _children:
-  - {fileID: 371485028}
   - {fileID: 1628419202}
+  - {fileID: 371485028}
 --- !u!1 &4379822770870358933
 GameObject:
   m_ObjectHideFlags: 0
@@ -5960,7 +5964,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6230,7 +6234,9 @@ MonoBehaviour:
   _styleSheet: {fileID: 11400000, guid: 8984a340252495a42b4c2e75c7922bf6, type: 2}
   _assetReferences: []
   _parent: {fileID: 0}
-  _children: []
+  _children:
+  - {fileID: 1234886053}
+  - {fileID: 5972325883917039690}
 --- !u!1 &4379822770930799593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,7 +6461,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6553,13 +6559,14 @@ GameObject:
   - component: {fileID: 6560078247280060424}
   - component: {fileID: 7885473296434386500}
   - component: {fileID: 6975345261604327462}
+  - component: {fileID: 5855585555020482911}
   m_Layer: 5
   m_Name: ForgotPassword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4379822771016102591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6600,10 +6607,10 @@ MonoBehaviour:
   OnFailedToSend:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4379822771123658677}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1785217337}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6624,10 +6631,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4379822771016102590}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5855585555020482911}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6645,8 +6652,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 'If you have an account, we''ll email you a reset code.
-            Email: '
+          m_StringArgument: Failed to send a code.
           m_BoolArgument: 0
         m_CallState: 2
   OnChangePassword:
@@ -6691,6 +6697,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8058260496305409568}
+        m_TargetAssemblyTypeName: ValidityMarker, Assembly-CSharp
+        m_MethodName: ShowMarkersSuccess
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4379822769529525750}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Failed to change password.
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7885473296434386500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6706,10 +6736,10 @@ MonoBehaviour:
   OnLoginSuccess:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4379822771123658677}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1785217337}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6730,10 +6760,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4379822771016102590}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5855585555020482911}
+        m_TargetAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6846,6 +6876,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5855585555020482911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379822771016102590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9397adaf87a49d38787336b0280986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnViewShown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4379822769529525750}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: If you have an account, we'll email you a reset code.
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnViewHidden:
+    m_PersistentCalls:
+      m_Calls: []
+  nameSpace: SignInEmail
+  viewName: ForgotPassword
+  hideViewAtStart: 1
 --- !u!1 &4379822771033670900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6978,7 @@ MonoBehaviour:
   m_text: ExampleEmail@gmail.com
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7117,7 +7180,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4476125199119968727}
+  m_TargetGraphic: {fileID: 0}
   m_TextViewport: {fileID: 4379822771180600924}
   m_TextComponent: {fileID: 4379822771009681600}
   m_Placeholder: {fileID: 4379822771475738489}
@@ -7256,10 +7319,9 @@ MonoBehaviour:
   valid: 0
   continueRequirements: {fileID: 6975345261604327462}
   successMarkers:
-  - {fileID: 0}
+  - {fileID: 278720490938953155}
   errorMarkers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5966880688412666746}
 --- !u!1 &4379822771123658677
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,6 +7333,7 @@ GameObject:
   - component: {fileID: 4379822771123658678}
   - component: {fileID: 3135905411861225440}
   - component: {fileID: 8779175163741451685}
+  - component: {fileID: 1785217337}
   m_Layer: 5
   m_Name: SignIn
   m_TagString: Untagged
@@ -7441,6 +7504,27 @@ MonoBehaviour:
   statsController: {fileID: 0}
   email: 
   password: 
+--- !u!114 &1785217337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379822771123658677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9397adaf87a49d38787336b0280986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnViewShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnViewHidden:
+    m_PersistentCalls:
+      m_Calls: []
+  nameSpace: SignInEmail
+  viewName: SignIn
+  hideViewAtStart: 0
 --- !u!1 &4379822771164744811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7510,7 +7594,7 @@ MonoBehaviour:
   m_text: Code
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7670,10 +7754,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -529.2462}
-  m_SizeDelta: {x: 595, y: 75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4379822771375183376
 CanvasRenderer:
@@ -7782,7 +7866,9 @@ MonoBehaviour:
   _styleSheet: {fileID: 11400000, guid: 8984a340252495a42b4c2e75c7922bf6, type: 2}
   _assetReferences: []
   _parent: {fileID: 0}
-  _children: []
+  _children:
+  - {fileID: 520815308}
+  - {fileID: 491065372}
 --- !u!1 &4379822771386868266
 GameObject:
   m_ObjectHideFlags: 0
@@ -8075,7 +8161,7 @@ MonoBehaviour:
   m_text: Confirm your new password
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8611,7 +8697,7 @@ MonoBehaviour:
   m_text: LV. 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
-  m_sharedMaterial: {fileID: 5612414055512975473, guid: 326dd20c8759ad347bce55de82519e16, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9867,10 +9953,10 @@ RectTransform:
   m_Father: {fileID: 4379822771453510573}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.0923, y: -201.24039}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5876751711001410256
 MonoBehaviour:
@@ -10613,6 +10699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+--- !u!1 &407157031185220254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+  m_PrefabInstance: {fileID: 7951114447922413853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &407157031185220255 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7781810446540817282, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
@@ -10629,11 +10720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &407157031185220254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
-  m_PrefabInstance: {fileID: 7951114447922413853}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9119345098994402903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10824,6 +10910,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+--- !u!1 &1502922745252596293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+  m_PrefabInstance: {fileID: 9162009500547254726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1502922745252596292 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7781810446540817282, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+  m_PrefabInstance: {fileID: 9162009500547254726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1502922745252596295 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7781810446540817281, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
@@ -10835,16 +10931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1502922745252596292 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7781810446540817282, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
-  m_PrefabInstance: {fileID: 9162009500547254726}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1502922745252596293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
-  m_PrefabInstance: {fileID: 9162009500547254726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2361341958485087109
 MonoBehaviour:
   m_ObjectHideFlags: 0

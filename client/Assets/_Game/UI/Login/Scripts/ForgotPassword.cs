@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class ForgotPassword : MonoBehaviour
 {
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
     private string _code;
 
     [SerializeField] private EmailLoginHandler loginHandler;
@@ -18,13 +18,14 @@ public class ForgotPassword : MonoBehaviour
 
     private async void OnEnable()
     {
-        _beamableAPI = await API.Instance;
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     [UsedImplicitly]
     public void SendCode()
     {
-        _beamableAPI.AuthService.IssuePasswordUpdate(loginHandler.email)
+        _context.Api.AuthService.IssuePasswordUpdate(loginHandler.email)
             .Then(_ =>
             {
                 OnCodeSent?.Invoke();
@@ -39,7 +40,7 @@ public class ForgotPassword : MonoBehaviour
     [UsedImplicitly]
     public void ConfirmChangePassword()
     {
-        _beamableAPI.AuthService.ConfirmPasswordUpdate(_code, loginHandler.password)
+        _context.Api.AuthService.ConfirmPasswordUpdate(_code, loginHandler.password)
             .Then(_ =>
             {
                 OnChangePassword?.Invoke();

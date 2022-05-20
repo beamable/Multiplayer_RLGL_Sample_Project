@@ -83,7 +83,8 @@ MonoBehaviour:
     HasValue: 0
     Value: 0
   icon:
-    m_AssetGUID: a4d92dad0d635c04ca68c5aafd296f4b
-    m_SubObjectName: LargeBundle
-    m_SubObjectType: 
+    m_AssetGUID: f819a6beb22c04c8d9f8222f930252b5
+    m_SubObjectName: icon
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
     m_EditorAssetChanged: 0
