@@ -679,8 +679,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336307288786130375}
-  - component: {fileID: 2663312685906579745}
-  - component: {fileID: 6616979332230725066}
   - component: {fileID: 3323469194088105991}
   - component: {fileID: 992886898651428151}
   m_Layer: 5
@@ -712,32 +710,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2663312685906579745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336307288786130368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dd0bd106c13ac42b7ab254166a6532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iconImage: {fileID: 0}
---- !u!114 &6616979332230725066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336307288786130368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19a250a34ec62641b8ce96d955a0907, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  username: {fileID: 0}
 --- !u!114 &3323469194088105991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +728,7 @@ MonoBehaviour:
   OnGetUsername:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6616979332230725066}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerUsernameUI, Assembly-CSharp
         m_MethodName: SetUsername
         m_Mode: 0
@@ -783,7 +755,7 @@ MonoBehaviour:
   OnGetIcon:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2663312685906579745}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerIconUI, Assembly-CSharp
         m_MethodName: SetIcon
         m_Mode: 0
@@ -824,10 +796,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievementsDictionary:
     achievements: []
-  OnUpdateRecieved:
+  OnUpdateReceived:
     m_PersistentCalls:
       m_Calls: []
-  OnErrorRevieved:
+  OnErrorReceived:
     m_PersistentCalls:
       m_Calls: []
   OnAchievementsLoaded:

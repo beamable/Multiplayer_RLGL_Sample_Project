@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 8407384516494559584}
   - component: {fileID: 6317896869056934430}
   - component: {fileID: 3559185841823786885}
-  - component: {fileID: 7618118421584328400}
   - component: {fileID: 8304696996155456817}
   m_Layer: 0
   m_Name: KCCPlayer
@@ -209,7 +208,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _weaponManager: {fileID: 4363855592623823595}
-  _statsController: {fileID: 7618118421584328400}
 --- !u!114 &300728438144174315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,18 +771,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7618118421584328400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300728438144174226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d611ced7d737044899ce0ba0b426b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &8304696996155456817
 Animator:
   serializedVersion: 3
