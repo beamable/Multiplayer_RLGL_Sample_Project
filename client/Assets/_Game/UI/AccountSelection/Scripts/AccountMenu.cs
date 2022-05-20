@@ -51,8 +51,9 @@ namespace _Game.UI.AccountSelection.Scripts
 
         private async Task GetAccountStats(User user)
         {
-            var beamableAPI = await API.Instance;
-            var stats = await beamableAPI.StatsService.GetStats("client", "public", "player", user.id);
+            var context = BeamContext.Default;
+            await context.OnReady;
+            var stats = await context.Api.StatsService.GetStats("client", "public", "player", user.id);
             
             stats.TryGetValue(aliasStat.StatKey, out _alias);
             stats.TryGetValue(scoreStat.StatKey, out _score);

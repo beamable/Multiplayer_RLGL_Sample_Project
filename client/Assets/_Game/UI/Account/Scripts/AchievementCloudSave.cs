@@ -17,19 +17,13 @@ public class AchievementCloudSave : MonoBehaviour
     
     [SerializeField] private AchievementsDictionary achievementsDictionary;
 
-    [SerializeField] private UnityEvent OnUpdateRecieved;
-    [SerializeField] private UnityEvent OnErrorRevieved;
+    [SerializeField] private UnityEvent OnUpdateReceived;
+    [SerializeField] private UnityEvent OnErrorReceived;
     [SerializeField] private UnityEvent<List<AchievementContent>> OnAchievementsLoaded;
     
     private string _filePath = "";
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
     private Beamable.Api.CloudSaving.CloudSavingService _cloudSavingService;
-    private AchievementsServiceClient _achievementsService;
-
-    private void Awake()
-    {
-        _achievementsService = new AchievementsServiceClient();
-    }
 
     private void OnEnable()
     {
@@ -38,8 +32,9 @@ public class AchievementCloudSave : MonoBehaviour
 
     private async void SetUpBeamable()
     {
-        _beamableAPI = await Beamable.API.Instance;
-        _cloudSavingService = _beamableAPI.CloudSavingService;
+        _context = BeamContext.Default;
+        await _context.OnReady;
+        _cloudSavingService = _context.Api.CloudSavingService;
         
         _filePath = $"{_cloudSavingService.LocalCloudDataFullPath}{Path.DirectorySeparatorChar}{FILE_NAME}";
         
@@ -48,8 +43,10 @@ public class AchievementCloudSave : MonoBehaviour
         _cloudSavingService.OnError += CloudSavingService_OnError;
 
         if(!_cloudSavingService.isInitializing) _cloudSavingService.Init();
+        _context.Api.NotificationService.Subscribe("achievementEarned", SaveAchievement);
 
         achievementsDictionary = await LoadAchievements();
+        BeamableStatsController.SetCurrentEarnedAchievements(achievementsDictionary.achievements);
     }
 
     private async Task<AchievementsDictionary> LoadAchievements()
@@ -68,18 +65,6 @@ public class AchievementCloudSave : MonoBehaviour
             achievementDictionary = new AchievementsDictionary();
             Directory.CreateDirectory(Path.GetDirectoryName(_filePath));
         }
-        
-        var achievementList = await _achievementsService.CheckAchievements();
-        achievementDictionary.achievements.Clear();
-        foreach (var achievementKVP in achievementList)
-        {
-            AchievementsDictionary.Achievement achievement = new AchievementsDictionary.Achievement
-            {
-                key = achievementKVP.Key,
-                value = achievementKVP.Value
-            };
-            achievementDictionary.achievements.Add(achievement);
-        }
 
         var json = JsonUtility.ToJson(achievementDictionary);
         File.WriteAllText(_filePath, json);
@@ -90,7 +75,7 @@ public class AchievementCloudSave : MonoBehaviour
     
     private async Task<List<AchievementContent>> LoadContentAchievements()
     {
-        var contentService = _beamableAPI.ContentService;
+        var contentService = _context.Api.ContentService;
         var rawAchievementGroup = await contentService.GetContent(ACHIEVEMENT_GROUP);
         var achievementGroup = rawAchievementGroup as AchievementGroupContent;
         if (achievementGroup == null) return new List<AchievementContent>();
@@ -107,20 +92,34 @@ public class AchievementCloudSave : MonoBehaviour
     public bool CheckIfAchieved(string id)
     {
         var achievements = achievementsDictionary;
-        return achievements.achievements.Any(achievement => achievement.key == id && achievement.value);
+        return achievements.achievements.Any(achievement => achievement == id);
+    }
+
+    public void SaveAchievement(object achievementId)
+    {
+        achievementsDictionary.achievements.Add(achievementId.ToString());
+        BeamableStatsController.SetCurrentEarnedAchievements(achievementsDictionary.achievements);
+        var json = JsonUtility.ToJson(achievementsDictionary);
+
+        if (!Directory.Exists(_filePath))
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(_filePath));
+        }
+
+        File.WriteAllText(_filePath, json);
     }
 
     private void CloudSavingService_OnUpdateReceived(ManifestResponse manifest)
     {
         Debug.Log($"CloudSavingService_OnUpdateReceived()");
-        OnUpdateRecieved?.Invoke();
+        OnUpdateReceived?.Invoke();
     }
     
     
     private void CloudSavingService_OnError(CloudSavingError cloudSavingError)
     {
         Debug.Log($"CloudSavingService_OnError() Message = {cloudSavingError.Message}");
-        OnErrorRevieved?.Invoke();
+        OnErrorReceived?.Invoke();
     }
     
 }
@@ -128,12 +127,5 @@ public class AchievementCloudSave : MonoBehaviour
 [Serializable]
 public class AchievementsDictionary
 {
-    [Serializable]
-    public struct Achievement
-    {
-        public string key;
-        public bool value;
-    }
-
-    public List<Achievement> achievements = new List<Achievement>();
+    public List<string> achievements = new List<string>();
 }

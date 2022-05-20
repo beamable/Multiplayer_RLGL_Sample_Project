@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tags: []
   icon:
-    m_AssetGUID: eabd5f1f7dc47924b98c84a44014ccb5
-    m_SubObjectName: HQCurrencyIcon@4x
-    m_SubObjectType: 
+    m_AssetGUID: e095de18b1944f54cba95dd4fd9c0842
+    m_SubObjectName: FlatCurrencyIcon@4x
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
     m_EditorAssetChanged: 0
   clientPermission:
     writeSelf: 0

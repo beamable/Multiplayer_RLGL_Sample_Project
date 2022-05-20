@@ -723,7 +723,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attack_Punch
     m_StateMachine: {fileID: -4386163873670088682}
-    m_Mask: {fileID: 31900000, guid: 6f9ee2e105daaf5459c815216fdddb7e, type: 2}
+    m_Mask: {fileID: 31900000, guid: 523c4521badc06645bec3cecac6ec4ad, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -735,7 +735,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attack_Blunt
     m_StateMachine: {fileID: 3487178892942348322}
-    m_Mask: {fileID: 31900000, guid: 6f9ee2e105daaf5459c815216fdddb7e, type: 2}
+    m_Mask: {fileID: 31900000, guid: 523c4521badc06645bec3cecac6ec4ad, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -747,7 +747,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attack_Stab
     m_StateMachine: {fileID: 1845762321165982710}
-    m_Mask: {fileID: 31900000, guid: 6f9ee2e105daaf5459c815216fdddb7e, type: 2}
+    m_Mask: {fileID: 31900000, guid: 523c4521badc06645bec3cecac6ec4ad, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -759,7 +759,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Death Layer (Frozen)
     m_StateMachine: {fileID: -823103069591226659}
-    m_Mask: {fileID: 31900000, guid: 4a46a9fe2d0975242849b783fdb96c7c, type: 2}
+    m_Mask: {fileID: 31900000, guid: 421c94bb90f96c04ba194929fe709400, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0

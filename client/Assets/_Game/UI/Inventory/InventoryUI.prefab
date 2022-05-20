@@ -1849,7 +1849,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1715418626}
   m_HandleRect: {fileID: 4209591336117110276}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2157,13 +2157,13 @@ MonoBehaviour:
   _assetReferences: []
   _parent: {fileID: 0}
   _children:
-  - {fileID: 1715418624}
-  - {fileID: 7073836620037919731}
-  - {fileID: 2560486761711298570}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 3466853014800210764}
   - {fileID: 3235004801946016592}
   - {fileID: 8576052423449010651}
-  - {fileID: 7618022455149361524}
+  - {fileID: 2560486761711298570}
+  - {fileID: 1715418624}
 --- !u!114 &761454329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,17 +2202,17 @@ MonoBehaviour:
     TopLeftColor: {r: 0.003921569, g: 0.21568629, b: 0.25882354, a: 1}
     TopRightColor: {r: 0.003921569, g: 0.21568629, b: 0.25882354, a: 1}
     _drawerMode: 1
-  threshold: 0
+  threshold: -3
   rounding: 0
   backgroundSprite: {fileID: 0}
   backgroundMode: 0
   meshFrame: 0
-  outlineWidth: 0
+  outlineWidth: 3
   outlineColor:
-    BottomLeftColor: {r: 0, g: 0, b: 0, a: 0}
-    BottomRightColor: {r: 0, g: 0, b: 0, a: 0}
-    TopLeftColor: {r: 0, g: 0, b: 0, a: 0}
-    TopRightColor: {r: 0, g: 0, b: 0, a: 0}
+    BottomLeftColor: {r: 0.007843138, g: 0.4666667, b: 0.5686275, a: 1}
+    BottomRightColor: {r: 0.007843138, g: 0.4666667, b: 0.5686275, a: 1}
+    TopLeftColor: {r: 0.007843138, g: 0.4666667, b: 0.5686275, a: 1}
+    TopRightColor: {r: 0.007843138, g: 0.4666667, b: 0.5686275, a: 1}
     _drawerMode: 1
   shadowColor:
     BottomLeftColor: {r: 0, g: 0, b: 0, a: 0}
@@ -3567,7 +3567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterCustomizationLobby, Assembly-CSharp
-        m_MethodName: PreviewStatChange
+        m_MethodName: SetStat
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4379,7 +4379,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2100532157054215382}
+  m_TargetGraphic: {fileID: 6183297340262830698}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4387,6 +4387,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: _Game.UI.Inventory.Scripts.InventoryItemInfo, Assembly-CSharp
         m_MethodName: EquipItem
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8618278858008923584}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4828,28 +4840,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7793813625381770088, guid: 38c4fc4a08a8a774da5546bc64887b6f, type: 3}
   m_PrefabInstance: {fileID: 3422382974315256318}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7618022455149361524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5099790158715658378, guid: 38c4fc4a08a8a774da5546bc64887b6f, type: 3}
-  m_PrefabInstance: {fileID: 3422382974315256318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b664d96326cd41a5b3f333aac566f578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7073836620037919731 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5572623738595527181, guid: 38c4fc4a08a8a774da5546bc64887b6f, type: 3}
-  m_PrefabInstance: {fileID: 3422382974315256318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b664d96326cd41a5b3f333aac566f578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4216698095808658869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5415,11 +5405,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
---- !u!1 &5799254484704425721 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
-  m_PrefabInstance: {fileID: 4289006179584619898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5799254484704425723 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7781810446540817281, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
@@ -5434,6 +5419,11 @@ MonoBehaviour:
 --- !u!224 &5799254484704425720 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7781810446540817282, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
+  m_PrefabInstance: {fileID: 4289006179584619898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5799254484704425721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7781810446540817283, guid: 7194d04337d35d048b9c4bc7d8b858b4, type: 3}
   m_PrefabInstance: {fileID: 4289006179584619898}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7589694215547518890
@@ -5487,6 +5477,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: Beamable.UI.UiViewComponent, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8618278858008923584}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

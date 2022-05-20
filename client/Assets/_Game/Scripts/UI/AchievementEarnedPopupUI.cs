@@ -10,7 +10,7 @@ public class AchievementEarnedPopupUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI description;
-    
+
     public async void SetUp(AchievementContent content)
     {
         icon.sprite = await content.Icon.LoadSprite();

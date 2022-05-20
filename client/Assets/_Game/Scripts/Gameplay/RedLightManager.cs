@@ -74,8 +74,7 @@ namespace BeamableExample.RedlightGreenLight
         private List<PlayerCharacter> _safePlayers = new List<PlayerCharacter>();
 
         [SerializeField] private SimGameTypeRef _redLightGameTypeRef;
-
-        private IBeamableAPI _beamableAPI;
+        
         private SimGameType _redLightGameType;
 
         public void Awake()
@@ -87,18 +86,12 @@ namespace BeamableExample.RedlightGreenLight
         {
             PlayerManager.PlayerRemovedNotification += OnPlayerRemoved;
 
-            InitializeBeamable();
+            InitializeRefs();
         }
 
-        public async void InitializeBeamable()
+        public async void InitializeRefs()
         {
-            await SetUpBeamable();
             await ResolveRefs();
-        }
-
-        private async Task SetUpBeamable()
-        {
-            _beamableAPI = await API.Instance;
         }
 
         /// <summary>

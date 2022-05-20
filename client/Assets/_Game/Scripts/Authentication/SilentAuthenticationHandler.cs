@@ -8,13 +8,13 @@ namespace _Game.Features.Authentication
     {
         [SerializeField]
         private UnityEvent OnLoginSuccess;
-    
-        private IBeamableAPI _beamableAPI;
+        private BeamContext _context;
         
         private async void Awake()
         {
-            _beamableAPI = await API.Instance;
-            Debug.Log($"User Id: {_beamableAPI.User.id}");
+            _context = BeamContext.Default;
+            await _context.OnReady;
+            Debug.Log($"User Id: {_context.PlayerId}");
             OnLoginSuccess?.Invoke();
         }
     }

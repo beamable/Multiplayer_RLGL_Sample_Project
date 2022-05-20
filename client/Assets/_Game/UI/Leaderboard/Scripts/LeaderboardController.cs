@@ -11,7 +11,7 @@ public class LeaderboardController : MonoBehaviour
 {
     [SerializeField] private ListViewComponent listViewComponent;
     [SerializeField] private ScoreCard footerCard;
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
     private LeaderBoardView _leaderBoardView;
 
     private string _leaderboardId = "leaderboards.ranked";
@@ -24,12 +24,13 @@ public class LeaderboardController : MonoBehaviour
 
     private async void SetUpBeamable()
     {
-        _beamableAPI = await Beamable.API.Instance;
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     public async void GetLeaderboard()
     {
-        _leaderBoardView = await _beamableAPI.LeaderboardService.GetBoard(_leaderboardId, 0, 100, _beamableAPI.User.id);
+        _leaderBoardView = await _context.Api.LeaderboardService.GetBoard(_leaderboardId, 0, 100, _context.PlayerId);
         UpdateList();
     }
     
@@ -39,7 +40,7 @@ public class LeaderboardController : MonoBehaviour
 
         foreach (var rankEntry in _leaderBoardView.rankings)
         {
-            var stats = await _beamableAPI.StatsService.GetStats("client", "public", "player", rankEntry.gt);
+            var stats = await _context.Api.StatsService.GetStats("client", "public", "player", rankEntry.gt);
             var alias = stats.ContainsKey("alias") ? stats["alias"] : "Anonymous";
             var entryStats = rankEntry.stats;
             cardData.Add(new ListItem

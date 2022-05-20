@@ -14,19 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Default:
     Name: default
-    Sprite: {fileID: 21300000, guid: de3949616f47c4b51abcae72c7aa042d, type: 3}
+    Sprite: {fileID: 21300000, guid: 57c7f6e6cabac6d43b6324c386e936c5, type: 3}
   Avatars:
-  - Name: default
-    Sprite: {fileID: 21300000, guid: de3949616f47c4b51abcae72c7aa042d, type: 3}
   - Name: 1
-    Sprite: {fileID: 21300000, guid: 273925895b907437d9e8635fb22adea5, type: 3}
+    Sprite: {fileID: 21300000, guid: d2764c233c07eb7409f11c5a531fedba, type: 3}
   - Name: 2
-    Sprite: {fileID: 21300000, guid: a18e4f19407f8448a823888f4d1d1dae, type: 3}
+    Sprite: {fileID: 21300000, guid: 83816a87492cb7942b77b7f63c918ae0, type: 3}
   - Name: 3
-    Sprite: {fileID: 21300000, guid: ff11b8b7d0dec4884a5fc262d6649c07, type: 3}
+    Sprite: {fileID: 21300000, guid: 841b2ccb1c5de2441bac0817685924ef, type: 3}
   - Name: 4
-    Sprite: {fileID: 21300000, guid: 3faccfa5a57454bc8825a3edf59a85f2, type: 3}
+    Sprite: {fileID: 21300000, guid: cc67b564824ac4348afe8a1c66d6aa8a, type: 3}
   - Name: 5
-    Sprite: {fileID: 21300000, guid: 80d87f25513784e71bc79f74c89a1cef, type: 3}
+    Sprite: {fileID: 21300000, guid: dda1a25baeab163418c5b7250c82fb03, type: 3}
   - Name: 6
-    Sprite: {fileID: 21300000, guid: 5034cca4069704104856b4a6fb604568, type: 3}
+    Sprite: {fileID: 21300000, guid: 57c7f6e6cabac6d43b6324c386e936c5, type: 3}

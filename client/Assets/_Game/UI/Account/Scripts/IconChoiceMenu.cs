@@ -17,6 +17,11 @@ public class IconChoiceMenu : MonoBehaviour
     public UnityEvent<string> OnSaveIcon;
     public UnityEvent OnUpdateList;
 
+    private void OnEnable()
+    {
+        UpdateList();
+    }
+
     public void UpdateList()
     {
         OnUpdateList?.Invoke();
@@ -42,6 +47,8 @@ public class IconChoiceMenu : MonoBehaviour
 
     public void SaveIcon()
     {
+        if(_selectedAvatar == null)
+            return;
         OnSaveIcon?.Invoke(_selectedAvatar.Name);
     }
 

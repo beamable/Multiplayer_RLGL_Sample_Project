@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Beamable;
 using System.Collections.Generic;
+using ExitGames.Client.Photon.StructWrapping;
 
 public class CharacterCustomizationFusion : NetworkBehaviour
 {
@@ -32,7 +33,7 @@ public class CharacterCustomizationFusion : NetworkBehaviour
     private const string DOMAIN = "client";
     private const string ACCESS = "public";
     private const string TYPE = "player";
-    private IBeamableAPI _beamableAPI;
+    private BeamContext _context;
     private long _userId;
     private Dictionary<string, string> _stats = new Dictionary<string, string>();
 
@@ -48,8 +49,9 @@ public class CharacterCustomizationFusion : NetworkBehaviour
 
     private async void SetUpBeamable()
     {
-        _beamableAPI = await API.Instance;
-        _userId = _beamableAPI.User.id;
+        _context = BeamContext.Default;
+        await _context.OnReady;
+        _userId = _context.PlayerId;
         await GetAllStats();
         GetAllStatCategories();
 
@@ -60,7 +62,7 @@ public class CharacterCustomizationFusion : NetworkBehaviour
 
     public async Task GetAllStats()
     {
-        _stats = await _beamableAPI.StatsService.GetStats(DOMAIN, ACCESS, TYPE, _userId);
+        _stats = await _context.Api.StatsService.GetStats(DOMAIN, ACCESS, TYPE, _userId);
     }
 
     public void GetAllStatCategories()
@@ -119,7 +121,7 @@ public class CharacterCustomizationFusion : NetworkBehaviour
     private async Task SetPlayerStat(string statKey, string value)
     {
         Dictionary<string, string> setStats = new Dictionary<string, string>() { { statKey, value } };
-        await _beamableAPI.StatsService.SetStats(ACCESS, setStats);
+        await _context.Api.StatsService.SetStats(ACCESS, setStats);
         await GetAllStats();
     }
 

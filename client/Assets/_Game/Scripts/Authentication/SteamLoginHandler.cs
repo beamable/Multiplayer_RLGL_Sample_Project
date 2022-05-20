@@ -88,7 +88,7 @@ namespace _Game.Features.Authentication
         {
             var promise = new Promise<bool>();
     
-            _beamableAPI.Requester.Request<Beamable.Common.Api.EmptyResponse>(
+            _context.Requester.Request<Beamable.Common.Api.EmptyResponse>(
                     Beamable.Common.Api.Method.POST,
                     $"/basic/payments/steam/auth",
                     new SteamTicketRequest(ticket))

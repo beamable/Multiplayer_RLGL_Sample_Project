@@ -9,8 +9,8 @@ public class InventoryController : MonoBehaviour
     public UnityEvent<InventoryView> OnInventoryUpdated;
 
     public InventoryView CurrentInventory { get; private set; }
-    
-    protected IBeamableAPI _beamableAPI;
+
+    protected BeamContext _context;
 
     /// <summary>
     /// Sets up Beamable, gets the current inventory then subscribes to changes.
@@ -21,7 +21,7 @@ public class InventoryController : MonoBehaviour
         await SetupBeamable();
         await GetCurrentInventory();
         SubscribeToInventory();
-        Debug.Log(_beamableAPI.User.id);
+        Debug.Log(_context.PlayerId);
     }
 
     /// <summary>
@@ -29,7 +29,8 @@ public class InventoryController : MonoBehaviour
     /// </summary>
     protected async Task SetupBeamable()
     {
-        _beamableAPI = await API.Instance;
+        _context = BeamContext.Default;
+        await _context.OnReady;
     }
 
     /// <summary>
@@ -37,7 +38,7 @@ public class InventoryController : MonoBehaviour
     /// </summary>
     protected async Task GetCurrentInventory()
     {
-        var inventory = await _beamableAPI.InventoryService.GetCurrent();
+        var inventory = await _context.Api.InventoryService.GetCurrent();
         UpdateInventory(inventory);
     }
 
@@ -56,6 +57,6 @@ public class InventoryController : MonoBehaviour
     /// </summary>
     protected void SubscribeToInventory()
     {
-        _beamableAPI.InventoryService.Subscribe(UpdateInventory);
+        _context.Api.InventoryService.Subscribe(UpdateInventory);
     }
 }
