@@ -24,6 +24,20 @@ namespace Beamable.Server.Clients
         }
         
         /// <summary>
+        /// Call the CheckAchievement method on the AchievementsService microservice
+        /// <see cref="Beamable.Microservices.AchievementsService.CheckAchievement"/>
+        /// </summary>
+        public Beamable.Common.Promise<bool> CheckAchievement(Beamable.Microservices.AchievementContent achievement, string key)
+        {
+            string serialized_achievement = this.SerializeArgument<Beamable.Microservices.AchievementContent>(achievement);
+            string serialized_key = this.SerializeArgument<string>(key);
+            string[] serializedFields = new string[] {
+                    serialized_achievement,
+                    serialized_key};
+            return this.Request<bool>("AchievementsService", "CheckAchievement", serializedFields);
+        }
+        
+        /// <summary>
         /// Call the LoadAchievements method on the AchievementsService microservice
         /// <see cref="Beamable.Microservices.AchievementsService.LoadAchievements"/>
         /// </summary>
@@ -37,15 +51,51 @@ namespace Beamable.Server.Clients
         /// Call the CheckAchievements method on the AchievementsService microservice
         /// <see cref="Beamable.Microservices.AchievementsService.CheckAchievements"/>
         /// </summary>
-        public Beamable.Common.Promise<System.Collections.Generic.Dictionary<string, bool>> CheckAchievements()
+        public Beamable.Common.Promise<System.Collections.Generic.List<string>> CheckAchievements(string key)
         {
-            string[] serializedFields = new string[0];
-            return this.Request<System.Collections.Generic.Dictionary<string, bool>>("AchievementsService", "CheckAchievements", serializedFields);
+            string serialized_key = this.SerializeArgument<string>(key);
+            string[] serializedFields = new string[] {
+                    serialized_key};
+            return this.Request<System.Collections.Generic.List<string>>("AchievementsService", "CheckAchievements", serializedFields);
+        }
+        
+        /// <summary>
+        /// Call the AchievementEarnedNotification method on the AchievementsService microservice
+        /// <see cref="Beamable.Microservices.AchievementsService.AchievementEarnedNotification"/>
+        /// </summary>
+        public Beamable.Common.Promise<System.Threading.Tasks.Task> AchievementEarnedNotification(long dbid, object achievementId)
+        {
+            string serialized_dbid = this.SerializeArgument<long>(dbid);
+            string serialized_achievementId = this.SerializeArgument<object>(achievementId);
+            string[] serializedFields = new string[] {
+                    serialized_dbid,
+                    serialized_achievementId};
+            return this.Request<System.Threading.Tasks.Task>("AchievementsService", "AchievementEarnedNotification", serializedFields);
         }
     }
     
     internal sealed class MicroserviceParametersAchievementsServiceClient
     {
+        
+        [System.SerializableAttribute()]
+        internal sealed class ParameterBeamable_Microservices_AchievementContent : MicroserviceClientDataWrapper<Beamable.Microservices.AchievementContent>
+        {
+        }
+        
+        [System.SerializableAttribute()]
+        internal sealed class ParameterSystem_String : MicroserviceClientDataWrapper<string>
+        {
+        }
+        
+        [System.SerializableAttribute()]
+        internal sealed class ParameterSystem_Int64 : MicroserviceClientDataWrapper<long>
+        {
+        }
+        
+        [System.SerializableAttribute()]
+        internal sealed class ParameterSystem_Object : MicroserviceClientDataWrapper<object>
+        {
+        }
     }
     
     [BeamContextSystemAttribute()]

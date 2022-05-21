@@ -12,16 +12,214 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a96b3852b93843ef94fc3401214399e, type: 3}
   m_Name: MicroserviceConfiguration
   m_EditorClassIdentifier: 
-  Microservices: []
+  Microservices:
+  - ServiceName: ProcessPostGameResults
+    Enabled: 1
+    TemplateId: small
+    CustomDockerFileStrings: 
+    IncludeDebugTools: 0
+    DebugData:
+      Username: root
+      Password: Password!
+      SshPort: 11100
+    LastBuiltCheckSum: 
+    RobotId: 
+  - ServiceName: AchievementsService
+    Enabled: 1
+    TemplateId: small
+    CustomDockerFileStrings: 
+    IncludeDebugTools: 1
+    DebugData:
+      Username: root
+      Password: Password!
+      SshPort: 11101
+    LastBuiltCheckSum: 
+    RobotId: 
   StorageObjects: []
+  ServiceCodeHandlesOnLastDomainReload:
+  - ServiceName: AchievementsService
+    CodeClass: 1
+    CodeDirectory: Assets\Beamable\Microservices\AchievementsService
+    AsmDefInfo:
+      Name: Beamable.Microservice.AchievementsService
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Unity.Beamable.Customer.Common
+      - CustomContent
+      DllReferences: []
+      Location: Assets/Beamable/Microservices/AchievementsService/Beamable.Microservice.AchievementsService.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 6C80A3604A268A63006BF1318696FBCF
+  - ServiceName: CustomContent
+    CodeClass: 3
+    CodeDirectory: Assets\_Game\CustomContent
+    AsmDefInfo:
+      Name: CustomContent
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Beamable.SmallerJSON
+      - Unity.Addressables
+      DllReferences: []
+      Location: Assets/_Game/CustomContent/CustomContent.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 1ECBC03BF2BA6CECCAA752698E6C0D53
+  - ServiceName: ProcessPostGameResults
+    CodeClass: 1
+    CodeDirectory: Assets\Beamable\Microservices\ProcessPostGameResults
+    AsmDefInfo:
+      Name: Beamable.Microservice.ProcessPostGameResults
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Unity.Beamable.Customer.Common
+      - SharedModels
+      DllReferences: []
+      Location: Assets/Beamable/Microservices/ProcessPostGameResults/Beamable.Microservice.ProcessPostGameResults.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: A2A4704454EC7889571B1356EAA7D18E
+  - ServiceName: SharedModels
+    CodeClass: 3
+    CodeDirectory: Assets\_Game\UI\Microservices
+    AsmDefInfo:
+      Name: SharedModels
+      References: []
+      DllReferences: []
+      Location: Assets/_Game/UI/Microservices/SharedModels.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: F617EF23EBD16019883DF595A81F925C
+  - ServiceName: Unity.Beamable.Customer.Common
+    CodeClass: 3
+    CodeDirectory: Assets\Beamable\Common
+    AsmDefInfo:
+      Name: Unity.Beamable.Customer.Common
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Beamable/Common/Unity.Beamable.Customer.Common.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 0AF7513C323127F6C61058ED2EB16B80
+  LastBuiltDockerImagesCodeHandles:
+  - ServiceName: ProcessPostGameResults
+    CodeClass: 1
+    CodeDirectory: Assets\Beamable\Microservices\ProcessPostGameResults
+    AsmDefInfo:
+      Name: Beamable.Microservice.ProcessPostGameResults
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Unity.Beamable.Customer.Common
+      - SharedModels
+      DllReferences: []
+      Location: Assets/Beamable/Microservices/ProcessPostGameResults/Beamable.Microservice.ProcessPostGameResults.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: A2A4704454EC7889571B1356EAA7D18E
+  - ServiceName: SharedModels
+    CodeClass: 3
+    CodeDirectory: Assets\_Game\UI\Microservices
+    AsmDefInfo:
+      Name: SharedModels
+      References: []
+      DllReferences: []
+      Location: Assets/_Game/UI/Microservices/SharedModels.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: F617EF23EBD16019883DF595A81F925C
+  - ServiceName: AchievementsService
+    CodeClass: 1
+    CodeDirectory: Assets\Beamable\Microservices\AchievementsService
+    AsmDefInfo:
+      Name: Beamable.Microservice.AchievementsService
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Unity.Beamable.Customer.Common
+      - CustomContent
+      DllReferences: []
+      Location: Assets/Beamable/Microservices/AchievementsService/Beamable.Microservice.AchievementsService.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 6C80A3604A268A63006BF1318696FBCF
+  - ServiceName: Unity.Beamable.Customer.Common
+    CodeClass: 3
+    CodeDirectory: Assets\Beamable\Common
+    AsmDefInfo:
+      Name: Unity.Beamable.Customer.Common
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Common
+      - Unity.Beamable.Server.Runtime.Mocks
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Beamable/Common/Unity.Beamable.Customer.Common.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 0AF7513C323127F6C61058ED2EB16B80
+  - ServiceName: CustomContent
+    CodeClass: 3
+    CodeDirectory: Assets\_Game\CustomContent
+    AsmDefInfo:
+      Name: CustomContent
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Beamable.SmallerJSON
+      - Unity.Addressables
+      DllReferences: []
+      Location: Assets/_Game/CustomContent/CustomContent.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 1ECBC03BF2BA6CECCAA752698E6C0D53
+  ServiceDependencyChecksums:
+  - ServiceName: ProcessPostGameResults
+    Checksum: 9d74f32a5ea86a71ad1ac7584ca8295f
+  - ServiceName: AchievementsService
+    Checksum: 809a0fc7b2dfdce41fd6f67e85368863
   CustomContainerPrefix: 
   AutoReferenceContent: 0
   AutoBuildCommonAssembly: 1
   ColorLogs: 1
   EnableDockerBuildkit: 0
   DockerDesktopCheckInMicroservicesWindow: 1
-  DockerDesktopPath: C:\Program Files\Docker\Docker\Docker Desktop.exe
-  DockerCommand: docker
+  EnableHotModuleReload: 1
+  EnableAutoPrune: 1
+  RiderDebugTools:
+    HasValue: 0
+    Value:
+      RiderVersion: 2021.3.3
+      RiderToolsDownloadUrl: https://download.jetbrains.com/resharper/dotUltimate.2021.3.2/JetBrains.Rider.RemoteDebuggerUploads.linux-x64.2021.3.2.zip
+  WindowsDockerCommand: docker
+  UnixDockerCommand: /usr/local/bin/docker
+  WindowsDockerDesktopPath: C:\Program Files\Docker\Docker\Docker Desktop.exe
+  UnixDockerDesktopPath: /Applications/Docker.app/
   ForwardContainerLogsToUnityConsole: 0
   LogProcessLabelColor: {r: 1, g: 1, b: 1, a: 1}
   LogStandardOutColor: {r: 0.2, g: 0.4, b: 1, a: 1}

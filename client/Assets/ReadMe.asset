@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
+  m_Name: ReadMe
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 94e6b4a33d8ff314abf32bed755c829b, type: 3}
+  title: 'Beamable Sample Project: Photon Multiplayer - Red Light, Green Light (RLGL)'
+  sections:
+  - heading: What is the "Red Light, Green Light" Game?
+    text: Race other players to the finish line, but don't get caught moving during a red light! This sample project utilizes several of Beamable's features.
+    linkText: Photon Multiplayer - Sample Project
+    url: https://docs.beamable.com/docs/multiplayer-rlgl-overview
+  - heading: What is Beamable?
+    text: Beamable is the low-code option for rapidly adding social, commerce, and
+      content management features to your live game. Learn how to do that with Beamable's
+      online product documentation.
+    linkText: docs.beamable.com
+    url: https://docs.beamable.com/
+  - heading: What is Photon Fusion?
+    text: Fusion is a high performance networking library for Unity. It supports up to 200 players and built-in reconciliation (rollback).
+    linkText: Fusion
+    url: https://doc.photonengine.com/en-us/fusion/current/getting-started/fusion-intro
+  - heading: Got feedback?
+    text: Let us know what you think or ask any questions you might have.
+    linkText: Contact Us
+    url: https://docs.beamable.com/discuss
+  loadedLayout: 0

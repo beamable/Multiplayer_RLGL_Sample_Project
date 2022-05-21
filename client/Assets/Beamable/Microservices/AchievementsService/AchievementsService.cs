@@ -13,20 +13,65 @@ namespace Beamable.Microservices
 		private const string STAT_TYPE = "player";
 		private const string ACHIEVEMENT_GROUP = "achievement_group.AchievementGroup";
 
-		private async Task<bool> CheckCountAchievement(int countRequirement, string key)
-		{
-			var stats = await Services.Stats.GetStats(DOMAIN, ACCESS, STAT_TYPE, Context.UserId);
-			stats.TryGetValue(key, out var value);
-			if (value == null) return false;
+		private List<string> _achievedAchievements = new List<string>();
 
-			return !(int.Parse(value) < countRequirement);
+		[ClientCallable]
+		public async Task<bool> CheckAchievement(AchievementContent achievement, string key)
+		{
+			if (achievement.TotalCountRequirement.TotalCount != 0 && achievement.StringRequirements.Count > 0)
+			{
+				var hasStringKey = achievement.StringRequirements.Any(stringRequirement => stringRequirement.Key == key);
+				if (achievement.TotalCountRequirement.Key == key || hasStringKey)
+				{
+					return await CheckCountAchievement(achievement) && await CheckStringAchievements(achievement);
+				}
+			}
+			if (achievement.TotalCountRequirement.TotalCount != 0)
+			{
+				if (achievement.TotalCountRequirement.Key == key)
+				{
+					return await CheckCountAchievement(achievement);
+				}
+			}
+
+			if (achievement.StringRequirements.Count <= 0) return false;
+			{
+				if (achievement.StringRequirements.Any(stringRequirement => stringRequirement.Key == key))
+				{
+					return await CheckStringAchievements(achievement);
+				}
+			}
+
+			return false;
 		}
 
-		private async Task<bool> CheckStringAchievement(string key)
+		private async Task<bool> CheckCountAchievement(AchievementContent content)
 		{
 			var stats = await Services.Stats.GetStats(DOMAIN, ACCESS, STAT_TYPE, Context.UserId);
-			stats.TryGetValue(key, out var value);
+			stats.TryGetValue(content.TotalCountRequirement.Key, out var value);
+			if (value == null) return false;
+
+			return !(int.Parse(value) < content.TotalCountRequirement.TotalCount);
+		}
+
+		private async Task<bool> CheckStringAchievement(StringRequirement requirement)
+		{
+			var stats = await Services.Stats.GetStats(DOMAIN, ACCESS, STAT_TYPE, Context.UserId);
+			stats.TryGetValue(requirement.Key, out var value);
 			return value == bool.TrueString;
+		}
+
+		private async Task<bool> CheckStringAchievements(AchievementContent content)
+		{
+			foreach (var stringRequirement in content.StringRequirements)
+			{
+				if (!await CheckStringAchievement(stringRequirement))
+				{
+					return false;
+				}
+			}
+
+			return true;
 		}
 
 		[ClientCallable]
@@ -46,24 +91,26 @@ namespace Beamable.Microservices
 		}
 		
 		[ClientCallable]
-		public async Task<Dictionary<string, bool>> CheckAchievements()
+		public async Task<List<string>> CheckAchievements(string key)
 		{
-			Dictionary<string, bool> achievementDictionary = new Dictionary<string, bool>();
+			List<string> achievementsEarned = new List<string>();
 			var achievements = await LoadAchievements();
 			foreach (var achievement in achievements)
 			{
-				if (achievement.TotalCountRequirement.TotalCount != 0)
+				if (!await CheckAchievement(achievement, key)) continue;
+				if (!achievementsEarned.Contains(achievement.Id))
 				{
-					achievementDictionary.Add(achievement.Id, await CheckCountAchievement(achievement.TotalCountRequirement.TotalCount,
-						achievement.TotalCountRequirement.Key));
-				}
-				else if (achievement.StringRequirements.Count > 0)
-				{
-					achievementDictionary.Add(achievement.Id, await CheckStringAchievement(achievement.StringRequirements.First().Key));
+					achievementsEarned.Add(achievement.Id);
 				}
 			}
 
-			return achievementDictionary;
+			return achievementsEarned;
+		}
+
+		[ClientCallable]
+		public async Task AchievementEarnedNotification(long dbid, object achievementId)
+		{
+			await Services.Notifications.NotifyPlayer(dbid, "achievementEarned", achievementId);
 		}
 	}
 }
