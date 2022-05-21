@@ -24,7 +24,6 @@ namespace Beamable.Microservices
 		private const string Store = "stores.HeadStore";
 		private const string LeaderboardName = "leaderboards.ranked";
 		private const string Kills = "kills";
-		private const string TotalKills = "total_kills";
 		private const string Access = "public";
 		private const string Domain = "client";
 		private const string StatType = "player";
@@ -177,11 +176,9 @@ namespace Beamable.Microservices
 		/// <returns></returns>
 		private async Task PostStats(Dictionary<string,string> currentStats, Dictionary<string, object> newStats)
 		{
-			var totalKills = currentStats.ContainsKey(TotalKills) ? int.Parse(currentStats[TotalKills]) : 0;
 			var stats = new Dictionary<string, string>()
 			{
 				{Score, newStats[Score].ToString() },
-				{TotalKills, ((int)newStats[Kills] + totalKills).ToString()},
 				{Rank,newStats[Rank].ToString()},
 				{GamesPlayed,newStats[GamesPlayed].ToString()}
 			};
