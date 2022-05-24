@@ -75,7 +75,7 @@ namespace _Game.Features.Authentication
         private async Task CreateUser(AuthThirdParty thirdParty, string token)
         {
             var tokenResponse = await _context.Api.AuthService.CreateUser();
-            _context.Api.ApplyToken(tokenResponse);
+            await _context.Api.ApplyToken(tokenResponse);
             var user = await _context.Api.AuthService.RegisterThirdPartyCredentials(thirdParty, token);
             _context.Api.UpdateUserData(user);
         }
@@ -86,9 +86,10 @@ namespace _Game.Features.Authentication
             _context.Api.UpdateUserData(user);
         }
         
-        private async Task LoginWithToken()
+        private Task LoginWithToken()
         {
             OnLoginSuccess?.Invoke();
+            return Task.CompletedTask;
         }
     }
 }

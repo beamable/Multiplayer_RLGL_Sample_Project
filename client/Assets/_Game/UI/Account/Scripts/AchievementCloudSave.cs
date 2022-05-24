@@ -42,7 +42,7 @@ public class AchievementCloudSave : MonoBehaviour
             CloudSavingService_OnUpdateReceived;
         _cloudSavingService.OnError += CloudSavingService_OnError;
 
-        if(!_cloudSavingService.isInitializing) _cloudSavingService.Init();
+        if(!_cloudSavingService.isInitializing) await _cloudSavingService.Init();
         _context.Api.NotificationService.Subscribe("achievementEarned", SaveAchievement);
 
         achievementsDictionary = await LoadAchievements();

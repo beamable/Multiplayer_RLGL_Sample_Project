@@ -45,10 +45,6 @@ public class PlayerAccessibilitySettings
 
 public class SettingsCloudSave : MonoBehaviour
 {
-    [SerializeField] private PlayerGraphicsSettings playerGraphicsSettings = null;
-    [SerializeField] private PlayerAudioSettings playerAudioSettings = null;
-    [SerializeField] private PlayerAccessibilitySettings playerAccessibilitySettings = null;
- 
     [SerializeField] private UnityEvent OnUpdateRecieved;
     [SerializeField] private UnityEvent OnErrorRecieved;
     [SerializeField] private UnityEvent<PlayerGraphicsSettings> OnGraphicsLoaded;
