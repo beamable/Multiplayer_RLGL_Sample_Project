@@ -40,6 +40,7 @@ namespace _Game.Features.Authentication
             
             await RegisterThirdPartyCredentials(AuthThirdParty.Facebook, result.AccessToken.TokenString);
             Debug.Log("Facebook login result: success");
+            SetDefaultAlias();
             OnLoginSuccess?.Invoke();
         }
     }

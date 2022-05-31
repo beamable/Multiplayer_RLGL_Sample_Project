@@ -30,6 +30,7 @@ namespace _Game.Features.Authentication
                 {
                     Debug.Log("Valid token handled!");
                     await RegisterThirdPartyCredentials(AuthThirdParty.Google, token);
+                    SetDefaultAlias();
                     OnLoginSuccess?.Invoke();
                 }
                 else
