@@ -14,18 +14,103 @@ When first opening the game, we use authentication and identity to give the user
    - **GoogleLoginHandler**
    - **SteamLoginHandler**
    - **FrictionlessLoginHandler**
+- The third parties all share the same RegisterThirdPartyCredentials functionality.
+```csharp
+protected async Task RegisterThirdPartyCredentials(AuthThirdParty thirdParty, string token)
+{
+    if (thirdParty != AuthThirdParty.Steam)
+    {
+        SetAvailability(await _context.Api.AuthService.IsThirdPartyAvailable(thirdParty, token));
+    }
+    var userHasCredentials = _context.Api.User.HasThirdPartyAssociation(thirdParty);
+
+    var shouldSwitchUsers = !_isAvailable; //A different account is already logged in.
+    var shouldCreateUser = _isAvailable && userHasCredentials; //No beamable account is logged in.
+    var shouldAttachToCurrentUser = _isAvailable && !userHasCredentials; //The beamable account does not have a third party attatched to it.
+    
+    if(shouldSwitchUsers)
+    {
+        await SwitchUsers(thirdParty, token);
+    }
+    
+    if(shouldCreateUser)
+    {
+        await CreateUser(thirdParty, token);
+    }
+    
+    if(shouldAttachToCurrentUser)
+    {
+        await LinkToExistingUser(thirdParty, token);
+    }
+}
+```
 
 **ForgotPassword** - Flow for getting a code to set up a new password.
 - Uses Beamable's Auth Service to issue a password update code to the user's email and to confirm and change the user's password.
+```csharp
+public void ConfirmChangePassword()
+{
+    _context.Api.AuthService.ConfirmPasswordUpdate(_code, loginHandler.password)
+        .Then(_ =>
+        {
+            OnChangePassword?.Invoke();
+        })
+        .Error(error =>
+        {
+            Debug.LogError(error);
+            OnFailedToChangePassword?.Invoke();
+        });
+}
+```
 
 **AccountSelectionController** - Gets the users that have logged into the device and tracks which account is currently selected in order to switch to the selected account.
 - Beamable Context is used to get any accounts that have logged into the game on the current device, and to updated the currently logged-in player.
+```csharp
+public async Task<UserBundle> GetCurrentAccountBundle()
+{
+    await SetupBeamable();
+    var accounts = await GetAllAccounts();
+    foreach (var account in accounts)
+    {
+        if (account.User.id == context.Api.User.id)
+        {
+            return account;
+        }
+    }
+
+    return new UserBundle();
+}
+```
 
 **AccountMenu** - Base class for displaying the UI for one or more user accounts.
-- Uses Beamable's stats service to get the user's stats to display on their account card.
+- Uses Beamable's [Stats](./Stats.md) service to get the user's stats to display on their account card.
+- Uses a [ListView](./ListViewComponent.md) to create a list of all of the device users.
 - Classes that inherit from this:
     - **SingleAccountMenu**
     - **MultipleAccountMenu**
+```csharp
+protected async Task<ListItem> GenerateAccountItem(UserBundle userBundle)
+{
+    var user = userBundle.User;
+    await GetAccountStats(user);
+    return new ListItem
+    {
+        Id = user.id.ToString(),
+        Title = _alias,
+        PropertyBag = new Dictionary<string, object>()
+        {
+            {"thirdPartyAppAssociations", user.thirdPartyAppAssociations},
+            {"email", user.email},
+            {"score", _score},
+            {"avatar", _avatar}
+        },
+        ViewAction = () =>
+        {
+            controller.selectedUser = userBundle;
+        }
+    };
+}
+```
 
 
 > To learn more about the basic usage of the Identity and Authentication features, read more on Beamable's documentation site [here](https://docs.beamable.com/docs/identity).

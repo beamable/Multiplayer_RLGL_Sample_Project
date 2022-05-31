@@ -69,7 +69,7 @@ namespace BeamableExample.RedlightGreenLight
 
 
         }
-        async void UpdateList(SerializedProperty effects)
+        void UpdateList(SerializedProperty effects)
         {
             if (effects == null) return;
             for (int i = 0; i < effects.arraySize; i++)

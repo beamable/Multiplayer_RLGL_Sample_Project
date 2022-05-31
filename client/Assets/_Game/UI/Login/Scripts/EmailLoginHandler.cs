@@ -35,8 +35,8 @@ public class EmailLoginHandler : AuthenticationHandler
     public async void CreateUser()
     {
         var token = await _context.Api.AuthService.CreateUser();
-        _context.Api.ApplyToken(token);
-        _context.Api.AuthService.RegisterDBCredentials(email, password)
+        await _context.Api.ApplyToken(token);
+        await _context.Api.AuthService.RegisterDBCredentials(email, password)
             .Then(user =>
             {
                 _user = user;
@@ -56,7 +56,7 @@ public class EmailLoginHandler : AuthenticationHandler
         {
             var token = await _context.Api.AuthService.Login(email, password, false);
             _user = _context.Api.User;
-            _context.Api.ApplyToken(token);
+            await _context.Api.ApplyToken(token);
             OnLoginSuccess?.Invoke();
         }
         catch (Exception e)

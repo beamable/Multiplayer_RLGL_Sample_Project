@@ -12,7 +12,6 @@ namespace BeamableExample.RedlightGreenLight
         [SerializeField] private float mouseRotationSpeed;
         [SerializeField] private float rotationSpeed = 1f;
         [SerializeField] private float dizzyThreshold = 1f;
-        private float rotationAmount = 0f;
         private Quaternion targetRotation = Quaternion.identity;
         private void OnEnable()
         {

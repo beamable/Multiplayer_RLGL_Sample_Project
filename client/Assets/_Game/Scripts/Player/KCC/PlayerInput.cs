@@ -51,7 +51,6 @@ namespace BeamableExample.RedlightGreenLight.Character
 		private Vector2       _cachedMoveDirection;
 		private float         _cachedMoveDirectionSize;
 		private bool          _resetCachedInput;
-		private int           _moveTouchID;
 		private int           _lookTouchID;
 		private Vector2       _moveTouchOrigin;
 		private Vector2       _lookTouchOrigin;
@@ -68,7 +67,6 @@ namespace BeamableExample.RedlightGreenLight.Character
 			_fixedInput  = default;
 			_renderInput = default;
 			_cachedInput = default;
-			_moveTouchID = -1;
 			_lookTouchID = -1;
 
 			if (_trackInput == true && _player != null && _player.Runner != null)

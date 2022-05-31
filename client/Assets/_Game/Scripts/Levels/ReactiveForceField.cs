@@ -12,11 +12,9 @@ namespace BeamableExample.RedlightGreenLight
         private Vector4[] positions = new Vector4[256];
         private List<float> collisionTimers = new List<float>();
         private float[] timers = new float[256];
-        public Renderer renderer;
-        private int lastIndex = -1;
+        public new Renderer renderer;
         private bool CanCollide = true;
         private float colliderTimer = 0f;
-        private int collisionCount = 0;
         public float speed = 5f;
         public float interval = 2f;
         public float velocityThreshold = 5f;

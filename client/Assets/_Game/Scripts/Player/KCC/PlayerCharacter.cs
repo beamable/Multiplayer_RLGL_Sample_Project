@@ -187,7 +187,7 @@ namespace BeamableExample.RedlightGreenLight.Character
             _context = BeamContext.Default;
             await _context.OnReady;
             _beamableId = _context.Api.User.id;
-            BeamableStatsController.SetUpBeamable();
+            await BeamableStatsController.SetUpBeamable();
         }
 
         [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority, InvokeLocal = true, Channel = RpcChannel.Reliable)]

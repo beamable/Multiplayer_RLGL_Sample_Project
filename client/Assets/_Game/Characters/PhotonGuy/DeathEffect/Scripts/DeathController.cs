@@ -110,20 +110,6 @@ namespace BeamableExample.RedlightGreenLight
             visuals.laserObject.SetActive(false);
         }
 
-        public void DropWeapon()
-        {
-            return;
-            foreach (GameObject obj in visuals.weaponRenderers)
-            {
-                if (obj.activeInHierarchy)
-                {
-                    obj.AddComponent<MeshCollider>().convex = true;
-                    obj.AddComponent<Rigidbody>();
-                    obj.transform.SetParent(null);
-                }
-            }
-        }
-
         public void StartDissolve()
         {
             dissolve = true;
