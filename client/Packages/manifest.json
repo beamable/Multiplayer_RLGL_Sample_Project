@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.beamable": "1.1.2",
-    "com.beamable.server": "1.1.2",
+    "com.beamable": "1.2.0",
+    "com.beamable.server": "1.2.0",
     "com.hwaet.projectcloner": "https://github.com/hwaet/UnityProjectCloner.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.6.11",

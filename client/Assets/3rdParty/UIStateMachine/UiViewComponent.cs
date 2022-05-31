@@ -58,7 +58,7 @@ namespace Beamable.UI
         {
 #if BEAMABLE_UI_ANALYTICS
             var context = BeamContext.Default;
-            await _context.OnReady;
+            await context.OnReady;
             var eventData = new ViewTrackingEvent(eventName, viewName, nameSpace, context.PlayerId.ToString());
             context.Api.AnalyticsTracker.TrackEvent(eventData, true);
 #endif
