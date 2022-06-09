@@ -13,20 +13,9 @@ namespace _Game.UI.Login.Scripts
         [SerializeField]
         private UiViewComponent multipleAccountView;
 
-        [SerializeField] private UiViewComponent guestFooterView;
-        [SerializeField] private UiViewComponent nonGuestFooterView;
-
         private async void OnEnable()
         {
             var otherUsers = await controller.GetOtherAccounts();
-            if (controller.context.Api.User.HasAnyCredentials())
-            {
-                SwitchToNonGuestFooterView();
-            }
-            else
-            {
-                SwitchToGuestFooterView();
-            }
             if (otherUsers.Count == 0)
             {
                 SwitchToSingleAccountView();
@@ -45,18 +34,6 @@ namespace _Game.UI.Login.Scripts
         {
             singleAccountView.Hide();
             multipleAccountView.Show();
-        }
-
-        private void SwitchToGuestFooterView()
-        {
-            nonGuestFooterView.Hide();
-            guestFooterView.Show();
-        }
-        
-        private void SwitchToNonGuestFooterView()
-        {
-            guestFooterView.Hide();
-            nonGuestFooterView.Show();
         }
     }
 }

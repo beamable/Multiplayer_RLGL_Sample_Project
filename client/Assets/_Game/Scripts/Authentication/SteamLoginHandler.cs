@@ -48,6 +48,7 @@ namespace _Game.Features.Authentication
 
             SetAvailability(await BeamableValidateSteamTicket(_ticket));
             await RegisterThirdPartyCredentials(AuthThirdParty.Steam, GetTokenFromTicket(_ticket));
+            SetDefaultAlias();
             OnLoginSuccess?.Invoke();
         }
 

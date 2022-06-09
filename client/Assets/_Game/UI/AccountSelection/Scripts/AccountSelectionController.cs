@@ -64,11 +64,6 @@ namespace _Game.UI.AccountSelection.Scripts
             var accounts = (await GetAllAccounts()).ToList();
             var currentAccount = await GetCurrentAccount();
             accounts.Remove(accounts.Find(userBundle => userBundle.User.id == currentAccount.Api.User.id));
-            var emptyAccounts = accounts.Where(account => !account.User.HasAnyCredentials()).ToList();
-            foreach (var account in emptyAccounts)
-            {
-                accounts.Remove(account);
-            }
             return accounts;
         }
 
@@ -96,24 +91,27 @@ namespace _Game.UI.AccountSelection.Scripts
         [UsedImplicitly]
         public async void SwitchCurrentUser()
         {
-            if (selectedUser == null || selectedUser.User == context.Api.User || !selectedUser.User.HasAnyCredentials())
+            if (selectedUser.User == context.Api.User)
             {
                 OnSwitchToSignIn?.Invoke();
                 return;
             }
 
-            context = await context.ChangeAuthorizedPlayer(selectedUser.Token).Error(exception =>
+            if (selectedUser.User != null)
             {
-                if (selectedUser.User.HasDBCredentials())
+                context = await context.ChangeAuthorizedPlayer(selectedUser.Token).Error(exception =>
                 {
-                    OnSwitchWithEmail?.Invoke(selectedUser.User.email);
-                }
-                else
-                {
-                    OnSwitchToSignIn?.Invoke();
-                }
-            });
-            
+                    if (selectedUser.User.HasDBCredentials())
+                    {
+                        OnSwitchWithEmail?.Invoke(selectedUser.User.email);
+                    }
+                    else
+                    {
+                        OnSwitchToSignIn?.Invoke();
+                    }
+                });
+            }
+
             await SetupBeamable();
             OnSwitchUser?.Invoke();
         }
