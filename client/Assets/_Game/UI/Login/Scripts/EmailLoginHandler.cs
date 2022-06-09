@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using _Game.Features.Authentication;
 using Beamable;
 using Beamable.Common.Api.Auth;
@@ -8,6 +9,7 @@ using UnityEngine;
 public class EmailLoginHandler : AuthenticationHandler
 {
     private User _user;
+    private bool _createNewUser = true;
 
     [HideInInspector] public string email;
     [HideInInspector] public string password;
@@ -32,10 +34,19 @@ public class EmailLoginHandler : AuthenticationHandler
     }
 
     [UsedImplicitly]
-    public async void CreateUser()
+    public async Task CreateUser()
     {
         var token = await _context.Api.AuthService.CreateUser();
         await _context.Api.ApplyToken(token);
+    }
+
+    [UsedImplicitly]
+    public async void AttachEmail()
+    {
+        if (_createNewUser)
+        {
+            await CreateUser();
+        }
         await _context.Api.AuthService.RegisterDBCredentials(email, password)
             .Then(user =>
             {
@@ -47,6 +58,12 @@ public class EmailLoginHandler : AuthenticationHandler
                 Debug.LogException(error);
                 OnLoginFailed?.Invoke();
             });
+    }
+
+    [UsedImplicitly]
+    public void SetShouldCreateNewUser(bool createNewUser)
+    {
+        _createNewUser = createNewUser;
     }
 
     [UsedImplicitly]

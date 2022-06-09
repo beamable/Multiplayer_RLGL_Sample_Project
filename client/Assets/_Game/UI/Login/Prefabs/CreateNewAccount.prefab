@@ -5054,7 +5054,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 474462013485806872}
         m_TargetAssemblyTypeName: EmailLoginHandler, Assembly-CSharp
-        m_MethodName: CreateUser
+        m_MethodName: AttachEmail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5691,6 +5691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6ec71a69ac8cc41b16fc426c57089e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultAlias: Anonymous
   OnLoginSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -5821,7 +5822,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  statsController: {fileID: 0}
+  _accountSelectionController: {fileID: 0}
   email: 
   password: 
 --- !u!1 &9219715053959812359

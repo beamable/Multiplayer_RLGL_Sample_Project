@@ -21,6 +21,8 @@ public class PlayerStatInfo : MonoBehaviour
     public UnityEvent<string> OnGetUsername;
     public UnityEvent<Sprite> OnGetIcon;
     public UnityEvent<string> OnGetIconName;
+    public UnityEvent<string> OnGetEmail;
+    public UnityEvent<bool> OnHasNoEmail;
 
     private void OnEnable()
     {
@@ -34,6 +36,7 @@ public class PlayerStatInfo : MonoBehaviour
         _userId = _context.PlayerId;
         _stats = await _context.Api.StatsService.GetStats("client", "public", "player", _userId);
         GetAllStats();
+        GetEmail();
     }
 
     public void GetAllStats()
@@ -94,5 +97,11 @@ public class PlayerStatInfo : MonoBehaviour
     {
         await SetPlayerStat(avatarStat.StatKey, value);
         GetIcon();
+    }
+
+    public void GetEmail()
+    {
+        OnHasNoEmail?.Invoke(!_context.Api.User.HasDBCredentials());
+        OnGetEmail?.Invoke(_context.Api.User.HasDBCredentials() ? _context.Api.User.email : "");
     }
 }

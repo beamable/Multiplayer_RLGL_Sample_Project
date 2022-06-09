@@ -39,10 +39,8 @@ namespace _Game.Features.Authentication
         private async Task CheckAutoLogin()
         {
             var otherAccounts = await _accountSelectionController.GetOtherAccounts();
-            if (otherAccounts.Count > 0 || _context.Api.User.HasAnyCredentials())
-            {
-                await LoginWithToken();
-            }
+            if (otherAccounts.Count < 1) return;
+            await LoginWithToken();
         }
         protected async Task RegisterThirdPartyCredentials(AuthThirdParty thirdParty, string token)
         {
