@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: BussConfiguration
   m_EditorClassIdentifier: 
   _globalStyleSheet: {fileID: 0}
+  _globalStyleSheets: []
