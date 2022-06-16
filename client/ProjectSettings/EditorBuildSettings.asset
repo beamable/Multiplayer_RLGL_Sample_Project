@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Scenes/Final/Login.unity
+    path: Assets/_Game/Scenes/Login.unity
     guid: 102d6aa310e9b9c4e98d14f9e10920bc
   - enabled: 1
-    path: Assets/_Game/Scenes/Final/MainMenu.unity
+    path: Assets/_Game/Scenes/MainMenu.unity
     guid: 8a08122d815afe44dadf32ce57354a2e
   - enabled: 1
-    path: Assets/_Game/Scenes/Final/FusionInitializer.unity
+    path: Assets/_Game/Scenes/FusionInitializer.unity
     guid: 0be3a51ac8305a848b9083f29e037b58
   - enabled: 1
-    path: Assets/_Game/Scenes/Final/Level_RedLight.unity
+    path: Assets/_Game/Scenes/Level_RedLight.unity
     guid: e2985db9742093c4ea0f70e5e29f3110
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c0cba7fa9c332af40acd94cf791d45a5, type: 2}

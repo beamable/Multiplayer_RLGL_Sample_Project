@@ -15,7 +15,7 @@ MonoBehaviour:
   Facebook: 1
   Apple: 0
   Google: 1
-  GoogleClientID: 259230911381-i2ufurkbvmpv9pk12lqvnid1fr7d65kh.apps.googleusercontent.com
+  GoogleClientID: 
   GoogleIosClientID: 
   EnableGoogleSignInOnApple: 0
   DisplayNameStat: {fileID: 11400000, guid: 6b23cc10f2e954e67bd6c1760605d646, type: 2}

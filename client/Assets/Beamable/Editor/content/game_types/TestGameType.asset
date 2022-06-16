@@ -29,7 +29,7 @@ MonoBehaviour:
     HasValue: 0
     Value: 0
   matchingIntervalSecs:
-    HasValue: 1
-    Value: 30
+    HasValue: 0
+    Value: 0
   leaderboardUpdates: []
   rewards: []
