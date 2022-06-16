@@ -33,4 +33,7 @@ MonoBehaviour:
     text: Let us know what you think or ask any questions you might have.
     linkText: Contact Us
     url: https://docs.beamable.com/discuss
+  - heading: Project Setup
+    linkText: 1. Sign up for a Photon Engine account.
+    url: https://doc.photonengine.com/en-us/fusion/current/getting-started/fusion-intro
   loadedLayout: 0
