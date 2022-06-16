@@ -16,7 +16,7 @@ MonoBehaviour:
   title: 'Beamable Sample Project: Photon Multiplayer - Red Light, Green Light (RLGL)'
   sections:
   - heading: What is the "Red Light, Green Light" Game?
-    text: Race other players to the finish line, but don't get caught moving during a red light! This sample project utilizes several of Beamable's features.
+    text: Race other players to the finish line, but don't get caught moving during a red light! This sample project utilizes several of Beamable's features, as well as Photon realtime networking.
     linkText: Photon Multiplayer - Sample Project
     url: https://docs.beamable.com/docs/multiplayer-rlgl-overview
   - heading: What is Beamable?
@@ -29,11 +29,12 @@ MonoBehaviour:
     text: Fusion is a high performance networking library for Unity. It supports up to 200 players and built-in reconciliation (rollback).
     linkText: Fusion
     url: https://doc.photonengine.com/en-us/fusion/current/getting-started/fusion-intro
+  - heading: Project Setup
+    text: Follow the steps in the sample project documentation.
+    linkText: Project Setup Documentation
+    url: https://docs.beamable.com/docs/multiplayer-rlgl-guide
   - heading: Got feedback?
     text: Let us know what you think or ask any questions you might have.
     linkText: Contact Us
     url: https://docs.beamable.com/discuss
-  - heading: Project Setup
-    linkText: 1. Sign up for a Photon Engine account.
-    url: https://doc.photonengine.com/en-us/fusion/current/getting-started/fusion-intro
   loadedLayout: 0
