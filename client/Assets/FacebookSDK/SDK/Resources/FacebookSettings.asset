@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 1b8c1c8aba2a4b6370cfee34969cd258
+  - 
   appIds:
-  - 1425285571240342
+  - 
   appLabels:
-  - Light Violence
+  - 
   cookie: 1
   logging: 1
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: D:/Projects/keystore/user.keystore
+  androidKeystorePath: 
   iosURLSuffix: 
   appLinkSchemes:
   - list: []
