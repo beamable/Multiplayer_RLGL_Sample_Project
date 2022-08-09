@@ -15,6 +15,22 @@ This sample project demonstrates [Beamable](https://beamable.com/) features and 
 - <mark>Assets/_Game/Scenes</mark> - Open a scene in the Unity Editor to play the game!
 - <mark>Packages/</mark> - Dependency package files for the project
 
+| Page                                                              | Details                                               |
+| ----------------------------------------------------------------- | ----------------------------------------------------- |
+| [Achievements](/Docs/Achievements.md)                             | Earn in-game achievements tracked with Stats.         |
+| [Cloud Save](/Docs/CloudSave.md)                                  | Save player progress to the cloud.                    |
+| [Content](/Docs/Content.md)                                       | Manage in-game items and configurations.              |
+| [Identity and Authentication](/Docs/IdentityAndAuthentication.md) | Allow the user to sign-in and manage profile data.    |
+| [Inventory](/Docs/Inventory.md)                                   | Manage player inventory items.                        |
+| [Leaderboards](/Docs/Leaderboards.md)                             | Read/write leaderboard scores for individual players. |
+| [ListViewComponent](/Docs/ListViewComponent.md)                   | Build scrollable lists dynamically.                   |
+| [Matchmaking](/Docs/Matchmaking.md)                               | Link other similarly-skilled players together.        |
+| [Microservices](/Docs/Microservices.md)                           | Deploy server-side functionality in C#                |
+| [Photon Fusion](/Docs/Photon%20Fusion.md)                         | High-performance realtime networking suite for Unity. |
+| [Stats](/Docs/Stats.md)                                           | Manage player-specific data objects.                  |
+| [Store](/Docs/Store.md)                                           | Purchase items with virtual currency or real money.   |
+| [Telemetry](/Docs/Telemetry.md)                                   | Log events about your game for analysis.              |
+
 ### **Beamable SDK**
 - **Included**: This project includes the Beamable SDK for Unity
 - **Version**: The latest public release as of each GIT commit
