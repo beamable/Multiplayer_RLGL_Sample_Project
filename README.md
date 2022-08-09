@@ -17,19 +17,19 @@ This sample project demonstrates [Beamable](https://beamable.com/) features and 
 
 | Page                                                              | Details                                               |
 | ----------------------------------------------------------------- | ----------------------------------------------------- |
-| [Achievements](/Docs/Achievements.md)                             | Earn in-game achievements tracked with Stats.         |
-| [Cloud Save](/Docs/CloudSave.md)                                  | Save player progress to the cloud.                    |
-| [Content](/Docs/Content.md)                                       | Manage in-game items and configurations.              |
-| [Identity and Authentication](/Docs/IdentityAndAuthentication.md) | Allow the user to sign-in and manage profile data.    |
-| [Inventory](/Docs/Inventory.md)                                   | Manage player inventory items.                        |
-| [Leaderboards](/Docs/Leaderboards.md)                             | Read/write leaderboard scores for individual players. |
-| [ListViewComponent](/Docs/ListViewComponent.md)                   | Build scrollable lists dynamically.                   |
-| [Matchmaking](/Docs/Matchmaking.md)                               | Link other similarly-skilled players together.        |
-| [Microservices](/Docs/Microservices.md)                           | Deploy server-side functionality in C#                |
-| [Photon Fusion](/Docs/Photon%20Fusion.md)                         | High-performance realtime networking suite for Unity. |
-| [Stats](/Docs/Stats.md)                                           | Manage player-specific data objects.                  |
-| [Store](/Docs/Store.md)                                           | Purchase items with virtual currency or real money.   |
-| [Telemetry](/Docs/Telemetry.md)                                   | Log events about your game for analysis.              |
+| [Achievements](/docs/Achievements.md)                             | Earn in-game achievements tracked with Stats.         |
+| [Cloud Save](/docs/CloudSave.md)                                  | Save player progress to the cloud.                    |
+| [Content](/docs/Content.md)                                       | Manage in-game items and configurations.              |
+| [Identity and Authentication](/docs/IdentityAndAuthentication.md) | Allow the user to sign-in and manage profile data.    |
+| [Inventory](/docs/Inventory.md)                                   | Manage player inventory items.                        |
+| [Leaderboards](/docs/Leaderboards.md)                             | Read/write leaderboard scores for individual players. |
+| [ListViewComponent](/docs/ListViewComponent.md)                   | Build scrollable lists dynamically.                   |
+| [Matchmaking](/docs/Matchmaking.md)                               | Link other similarly-skilled players together.        |
+| [Microservices](/docs/Microservices.md)                           | Deploy server-side functionality in C#                |
+| [Photon Fusion](/docs/Photon%20Fusion.md)                         | High-performance realtime networking suite for Unity. |
+| [Stats](/docs/Stats.md)                                           | Manage player-specific data objects.                  |
+| [Store](/docs/Store.md)                                           | Purchase items with virtual currency or real money.   |
+| [Telemetry](/docs/Telemetry.md)                                   | Log events about your game for analysis.              |
 
 ### **Beamable SDK**
 - **Included**: This project includes the Beamable SDK for Unity
