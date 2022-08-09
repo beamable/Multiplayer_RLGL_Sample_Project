@@ -15,6 +15,10 @@ This sample project demonstrates [Beamable](https://beamable.com/) features and 
 - <mark>Assets/_Game/Scenes</mark> - Open a scene in the Unity Editor to play the game!
 - <mark>Packages/</mark> - Dependency package files for the project
 
+### **Documentation**
+
+Documentation for this project is in the [Docs](/docs/) folder, organized by feature. The docs primarily focus on where the feature is displayed in the game, and any additional functionality on top of the "standard" implementation.
+
 | Page                                                              | Details                                               |
 | ----------------------------------------------------------------- | ----------------------------------------------------- |
 | [Achievements](/docs/Achievements.md)                             | Earn in-game achievements tracked with Stats.         |
